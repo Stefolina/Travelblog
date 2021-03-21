@@ -10,7 +10,7 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
  */
 
 /*Definition for backend functions*/
-let users = [];
+let conversations = [];
 
 /**
  * async function for downloading data from backend to required pages
