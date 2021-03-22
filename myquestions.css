@@ -1,0 +1,12 @@
+/*main stuff*/
+
+body {
+    margin: 0;
+}
+
+.main-section {
+    display: flex;
+}
+
+
+/*question-section*/
