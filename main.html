@@ -8,13 +8,16 @@
         <title>Travelblog</title>
 
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="menu.css">
 
         <script src="./mini_backend.js"></script>
         <script src="overall.js"></script>
         <script src="main.js"></script>
     </head>
 
-    <body onload="init()">
+    <body onload="init(); includeHTML()">
+
+        <div w3-include-html="templates/menu.html"></div>
         
     </body>
 </html>
