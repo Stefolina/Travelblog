@@ -8,13 +8,29 @@
         <title>My Questions</title>
 
         <link rel="stylesheet" href="myquestions.css">
+        <link rel="stylesheet" href="menu.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
         <script src="./mini_backend.js"></script>
         <script src="overall.js"></script>
         <script src="myquestions.js"></script>
     </head>
 
-    <body onload="init()">
-        
+    <body onload="init(); includeHTML()">
+
+    <div class="main-section">
+        <div w3-include-html="templates/menu.html"></div>
+
+        <div class="question-section">
+
+            <div class="header-div">
+                <img src="icons/question.svg" class="questionmark">
+                <h1 class="header">My Questions</h1>
+            </div>
+
+        </div>
+    </div>   
     </body>
 </html>
