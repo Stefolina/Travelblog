@@ -1,0 +1,98 @@
+/** Main Section */
+
+body {
+    margin: 0 px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-section {
+    display: flex; 
+}
+
+/** Post Section */
+
+.post-section {
+    animation: 1s flyIn ease-out;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0px);
+    }
+}
+
+.button-question {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+
+/** Overlay Section*/
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+}
+
+.modal-background {
+    background-color: black;
+    opacity: 0.5;
+    transition: opacity 1s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 750px;
+    min-height: 550px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 11;
+}
+
+.hidden {
+    display: none; 
+    opacity: 0 !important;
+}
+
+
+/** Input/Post Question Section */
+
+.button-close-overlay {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    transition: all ease-in-out 225ms;
+    cursor: pointer;
+}
+
+.post {
+    width: 500px; 
+    height: 150px; 
+    border: 1px solid lightgray; 
+    padding: 8px; 
+    margin-bottom: 16px; 
+    margin-top: 32px; 
+}
+
+.post-div {
+    display: flex; 
+    justify-content: center; 
+}

@@ -19,8 +19,38 @@
     </head>
 
     <body onload="init(); includeHTML()">
+
+        <div class="main-section">
     
-        <div w3-include-html="templates/menu.html"></div>
+            <div w3-include-html="templates/menu.html"></div>
+
+            <div class="post-section">
+                <button class="button-question" onclick="openOverlay()">Wird noch geändert</button>
+            </div>
+
+            <div id="myposts"></div>
+
+            <div class="modal-container hidden">
+                <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div>
+                            <div class="text-overlay">Deine Frage</div>
+                            <hr>
+                        </div>
+
+                        <div class="input-section">
+                            <input class="input" type="text" id="name" placeholder="Dein Name">
+
+                            <input class="input" type="text" id="question" placeholder="Deine Frage">
+                        </div>
+                        
+                        <div>
+                            <img src="icons/X.svg" class="button-close-overlay" onclick="closeOverlay(); addPost()">
+                        </div>
+                    </div>
+            </div>
+
+        </div>
         
     </body>
 </html>
