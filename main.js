@@ -33,10 +33,11 @@ function addPost() {
     for(let i = 0; i < posts.length; i++) {
 
         myposts.innerHTML += `
+        <div>
+            <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
+        </div>
         <div class="post-div">
-            <div>
-                <button class="removebutton" onclick="removePost(' + index + '); addPost();">X</button>
-            </div>
+
             <div class="post">
                 <b>${names[i]}</b><br>
                 ${posts[i]}<br>
