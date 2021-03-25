@@ -1,0 +1,57 @@
+/*main stuff*/
+body {
+    margin: 0;
+}
+
+.main-section {
+    display: flex;
+}
+
+/*second section*/
+.second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/world.jpeg);
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    padding: 20px;
+}
+
+.header-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-family: 'Special Elite', cursive;
+    justify-content: center;
+    color: rgb(170, 163, 157);
+}
+
+.profil-pic {
+    width: 40px;
+    height: 40px;
+}
+
+/*new profil*/
+
+.profilForm {
+    display: flex;
+    flex-direction: column;
+    border: 2px;
+    box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Raleway', sans-serif;
+    opacity: 0.9;
+    width: 115vh;
+    height: 77vh;
+    text-align: center;
+    background-color: white;
+    overflow-y: auto;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: lighter;
+    font-size: 12;
+}
+

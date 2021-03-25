@@ -14,6 +14,12 @@ body {
 .question-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-image: url(img/world.jpeg);
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    padding: 20px;
 }
 
 .header-div {
@@ -31,4 +37,23 @@ body {
 .header {
     font-family: 'Special Elite', cursive;
     justify-content: center;
+    color: rgb(170, 163, 157);
 }
+
+.question-area {
+    border: 2px;
+    box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Raleway', sans-serif;
+    opacity: 0.9;
+    width: 115vh;
+    height: 77vh;
+    text-align: center;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
