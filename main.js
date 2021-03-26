@@ -16,46 +16,68 @@ function closeOverlay() {
 /**
  * Post a question
  */
-let posts = []; 
-let names = []; 
+
 let destinations = [];
 let dates = [];
-let titles = [];
-let texts = [];
+let titles = []; 
+let names = []; 
+let questions = [];
 
 function addPost() {
-    let question = document.getElementById('question').value; 
+    let destination = document.getElementById('destination').value; 
+    let date = document.getElementById('date').value;
+    let title = document.getElementById('title').value; 
     let name = document.getElementById('name').value; 
+    let question = document.getElementById('question').value; 
 
-    posts.push(question); 
+    destinations.push(destination);
+    dates.push(date);
+    titles.push(title); 
     names.push(name);
+    questions.push(question);
 
+    showMain();
+}
+
+function showMain() {
     let myposts = document.getElementById('myposts'); 
 
     myposts.innerHTML = '';  
 
-    for(let i = 0; i < posts.length; i++) {
+    for(let i = 0; i < questions.length; i++) {
 
         myposts.innerHTML += `
         <div>
             <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
         
             <div class="post-div">
-
-                <div class="post">
+                <div id="conversation" class="post">
+                    ${destinations[i]}<br>
+                    ${titles[i]}<br>
+                    ${dates[i]}<br>
                     <b>${names[i]}</b><br>
-                    ${posts[i]}<br>
+                    ${questions[i]}<br>
                 </div>
             </div>
         </div>
     `; 
     }
 
-    document.getElementById('question').value = ''; 
+    document.getElementById('destination').value = ''; 
+    document.getElementById('date').value = ''; 
+    document.getElementById('title').value = ''; 
     document.getElementById('name').value = ''; 
+    document.getElementById('question').value = ''; 
 }
 
+
+/**
+ * Remove Question
+ */
 function removePost(itemi) {
-    posts.splice(itemi, 1); 
+    destinations.splice(itemi, 1);
+    dates.splice(itemi, 1);
+    titles.splice(itemi, 1);
     names.splice(itemi, 1);
+    questions.splice(itemi, 1); 
 }
