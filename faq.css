@@ -27,7 +27,6 @@ body {
     }
 }
 
-
 .headline {
     font-size: 30px; 
     font-weight: bold; 
@@ -37,7 +36,7 @@ body {
 }
 
 .question-answer-section {
-    background-color: rgb(170, 163, 157);
+    background-color: #fcebdc;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px; 

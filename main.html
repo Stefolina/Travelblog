@@ -27,7 +27,9 @@
             <div w3-include-html="templates/menu.html"></div>
 
             <div class="post-section">
-                <button class="button-question" onclick="openOverlay()">Wird noch geändert</button>
+                <div>
+                    <button class="button-question" onclick="openOverlay()">Wird noch geändert</button>
+                </div>
 
                 <div id="myposts"></div>
             </div>
@@ -42,13 +44,32 @@
                     </div>
 
                     <div class="input-section">
-                        <input class="input" type="text" id="name" placeholder="Dein Name">
+                        <select class="input-destination" id="destination" size="1" required>
+                            <option>Asien</option>
+                            <option>Afrika</option>
+                            <option>Nordamerika</option>
+                            <option>Südamerika</option>
+                            <option>Europa</option>
+                            <option>Australien</option>
+                            <option>Antarktis</option>
+                        </select>
 
-                        <input class="input" type="text" id="question" placeholder="Deine Frage">
+                        <input class="input" type="date" id="date" required>
+
+                        <input class="input" type="text" id="title" placeholder="Worum geht es in deiner Frage?" required>
+
+                        <input class="input" type="text" id="name" placeholder="Dein Name" required>
+
+                        <textarea class="input-question" type="text" id="question" placeholder="Deine Frage" required></textarea>
+                    </div>
+
+                    <div>
+                        Möchtest du Account Placeholder
                     </div>
                     
-                    <div>
-                        <img src="icons/X.svg" class="button-close-overlay" onclick="closeOverlay(); addPost()">
+                    <div class="buttons-overlay">
+                        <img src="icons/check.svg" class="button-close-overlay" onclick="closeOverlay(); addPost()">
+                        <img src="icons/X.svg" class="button-close-overlay" onclick="closeOverlay()">
                     </div>
                 </div>
         </div>

@@ -18,12 +18,16 @@ function closeOverlay() {
  */
 let posts = []; 
 let names = []; 
+let destinations = [];
+let dates = [];
+let titles = [];
+let texts = [];
 
 function addPost() {
-    let text = document.getElementById('question').value; 
+    let question = document.getElementById('question').value; 
     let name = document.getElementById('name').value; 
 
-    posts.push(text); 
+    posts.push(question); 
     names.push(name);
 
     let myposts = document.getElementById('myposts'); 
@@ -35,12 +39,13 @@ function addPost() {
         myposts.innerHTML += `
         <div>
             <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
-        </div>
-        <div class="post-div">
+        
+            <div class="post-div">
 
-            <div class="post">
-                <b>${names[i]}</b><br>
-                ${posts[i]}<br>
+                <div class="post">
+                    <b>${names[i]}</b><br>
+                    ${posts[i]}<br>
+                </div>
             </div>
         </div>
     `; 

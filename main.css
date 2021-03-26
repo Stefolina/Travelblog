@@ -13,6 +13,9 @@ body {
 
 .post-section {
     animation: 1s flyIn ease-out;
+    width: 100%;
+    background-position: center; 
+    flex-direction: column; 
 }
 
 @keyframes flyIn {
@@ -27,9 +30,11 @@ body {
 }
 
 .button-question {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    width: 150px;
+    height: 50px; 
+    margin-top: 100px;
+    margin-bottom: 50px; 
+    font-weight: bold;  
 }
 
 
@@ -72,6 +77,10 @@ body {
     opacity: 0 !important;
 }
 
+.buttons-overlay {
+    display: flex; 
+}
+
 
 /** Input/Post Question Section */
 
@@ -95,4 +104,41 @@ body {
 .post-div {
     display: flex; 
     justify-content: center; 
+}
+
+.text-overlay {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 8px; 
+}
+
+.input-section {
+    display: flex; 
+    flex-direction: column;  
+    align-items: center; 
+}
+
+.input {
+    width: 300px; 
+    height: 30px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+}
+
+.input-destination {
+    width: 320px; 
+    height: 50px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+}
+
+.input-question {
+    width: 300px; 
+    height: 70px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    margin-top: 10px; 
 }
