@@ -23,6 +23,15 @@ let titles = [];
 let names = []; 
 let questions = [];
 
+async function saveConversation(conversation) {
+    conversations.push(conversation);
+    //console.log(allTasks);
+    let conversationsAsString = JSON.stringify(conversations);
+    await backend.setItem('conversations', conversationsAsString);
+
+    document.getElementById('myform').reset();
+}
+
 function addPost() {
     let destination = document.getElementById('destination').value; 
     let date = document.getElementById('date').value;
@@ -40,13 +49,13 @@ function addPost() {
 }
 
 function showMain() {
-    let myposts = document.getElementById('myposts'); 
+    let conversations = document.getElementById('myposts'); 
 
-    myposts.innerHTML = '';  
+    conversations.innerHTML = '';  
 
     for(let i = 0; i < questions.length; i++) {
 
-        myposts.innerHTML += `
+        conversations.innerHTML += `
         <div>
             <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
         
@@ -70,6 +79,10 @@ function showMain() {
     document.getElementById('question').value = ''; 
 }
 
+async function initMain(){
+    await loadAllConversations();
+    showMain();
+}
 
 /**
  * Remove Question
@@ -80,4 +93,6 @@ function removePost(itemi) {
     titles.splice(itemi, 1);
     names.splice(itemi, 1);
     questions.splice(itemi, 1); 
+
+    backend.deleteItem('conversations');
 }

@@ -20,7 +20,7 @@
         <script src="main.js"></script>
     </head>
 
-    <body onload="init(); includeHTML()">
+    <body onload="includeHTML(); initMain()">
 
         <div class="main-section">
     
@@ -44,7 +44,7 @@
                         <hr>
                     </div>
 
-                    <div class="input-section">
+                    <div class="input-section" id="myform">
                         <select class="input-destination" id="destination" size="1" required>
                             <option>Asien</option>
                             <option>Afrika</option>
