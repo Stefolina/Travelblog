@@ -1,7 +1,17 @@
 body {
-    margin: 0px;
+    margin: 0;
     background-color: rgb(245,242,238);
    
+}
+
+.overall-destination {
+    display: flex; 
+} 
+
+.second-section {
+    background-image: url(/img/world.jpeg);
+    background-size: contain; 
+    width: 100%;
 }
 
 .h1-heading {

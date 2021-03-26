@@ -14,6 +14,9 @@ body {
 
 .faq-section {
     animation: 1s flyIn ease-out;
+    background-image: url(/img/world.jpeg);
+    background-size: contain; 
+    width: 100%;
 }
 
 @keyframes flyIn {
@@ -36,7 +39,7 @@ body {
 }
 
 .question-answer-section {
-    background-color: #fcebdc;
+    background-color: white;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px; 

@@ -1,0 +1,13 @@
+body {
+    margin: 0; 
+}
+
+.main-section {
+    display:flex; 
+}
+
+.impressum-section {
+    background-image: url(/img/world.jpeg);
+    background-size: contain; 
+    width: 100%;
+}
