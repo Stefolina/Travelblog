@@ -1,0 +1,24 @@
+/*main stuff*/
+body {
+    margin: 0;
+}
+
+.main-section {
+    display: flex;
+}
+
+/*second section*/
+.second-section {
+    animation: 1s flyIn ease-out;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0px);
+    }
+}

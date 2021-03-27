@@ -1,6 +1,6 @@
 /**
  * Showing the questions
  */
-function startDragging() {
+function startDragging(event) {
   
 }

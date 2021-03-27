@@ -17,6 +17,18 @@ body {
     background-size: contain;
     width: 100%;
     padding: 20px;
+    animation: 1s flyIn ease-out;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0px);
+    }
 }
 
 .header-div {
@@ -38,15 +50,23 @@ body {
 
 /*new profil*/
 
+.profilpic {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
 .profilForm {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
     border: 2px;
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
     width: 115vh;
-    height: 77vh;
+    height: 60vh;
     text-align: center;
     background-color: white;
     overflow-y: auto;
@@ -55,3 +75,52 @@ body {
     font-size: 12;
 }
 
+.firstrow {
+    display: flex;
+    margin-top: 20px;
+}
+
+.secondrow {
+    display: flex;
+}
+
+.user-div {
+    margin-right: 30px;
+}
+
+.familyname-div {
+    margin-right: 30px;
+}
+
+.username {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.prename {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.familyname {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.email {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profil-btn {
+    background-color: rgb(170, 163, 157);
+    margin-top: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 50%;
+    transition: all 225ms ease-in-out;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profil-btn:hover {
+    background-color: rgb(220,218,216);
+    transform: scale(1.1);
+    font-weight: bold;
+}

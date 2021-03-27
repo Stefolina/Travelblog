@@ -35,26 +35,38 @@
             <div class="profil" id="currentProfil"></div>
             
             <div class="newProfile" id="newProfile">
+
                 <form class="profilForm">
-                    <div class="user-div">
-                        <h3>Username</h3>
-                        <input id="username" class="username" required></input>
+
+                    <img src="icons/profilpic.svg" class="profilpic">
+
+                    <input type="file">
+
+                    <div class="firstrow">
+                        <div class="user-div">
+                            <h3>Username</h3>
+                            <input id="username" class="username" required></input>
+                        </div>
+
+                        <div class="prename-div">
+                            <h3>Vorname</h3>
+                            <input id="prename" class="prename" required></input>
+                        </div>
                     </div>
 
-                    <div class="prename-div">
-                        <h3>Vorname</h3>
-                        <input id="prename" class="prename" required></input>
+                    <div class="secondrow">
+                        <div class="familyname-div">
+                            <h3>Nachname</h3>
+                            <input id="familyname" class="familyname" required></input>
+                        </div>
+
+                        <div class="email-div">
+                            <h3>E-Mail</h3>
+                            <input id="email" class="email" required></input>
+                        </div>
                     </div>
 
-                    <div class="familyname-div">
-                        <h3>Nachname</h3>
-                        <input id="familyname" class="familyname" required></input>
-                    </div>
-
-                    <div class="email-div">
-                        <h3>E-Mail</h3>
-                        <input id="email" class="email" required></input>
-                    </div>
+                    <button class="profil-btn" onclick="createprofil()">Profil anlegen</button>
                 </form>
             </div>
         </div>

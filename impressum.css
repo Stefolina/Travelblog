@@ -1,3 +1,4 @@
+/*main stuff*/
 body {
     margin: 0; 
 }
@@ -6,8 +7,21 @@ body {
     display:flex; 
 }
 
+/*second section*/
 .impressum-section {
     background-image: url(/img/world.jpeg);
     background-size: contain; 
     width: 100%;
+    animation: 1s flyIn ease-out;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0px);
+    }
 }

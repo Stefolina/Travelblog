@@ -15,6 +15,18 @@ body {
     background-image: url(img/bg.jpeg);
     background-size: cover;
     background-position: center;
+    animation: 1s flyIn ease-out;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0px);
+    }
 }
 
 .logo {
