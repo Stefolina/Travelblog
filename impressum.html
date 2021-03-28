@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Impressum</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="impressum.css">
-        <link rel="stylesheet" href="menu.css">
+    <title>Impressum</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="impressum.css">
+    <link rel="stylesheet" href="menu.css">
 
-        <script src="./mini_backend.js"></script>
-        <script src="overall.js"></script>
-        <script src="impressum.js"></script>
-    </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
-    <body onload="includeHTML()">
-        <div class="main-section">
-            <div w3-include-html="templates/menu.html"></div>
+    <script src="./mini_backend.js"></script>
+    <script src="overall.js"></script>
+    <script src="impressum.js"></script>
+</head>
 
-            <div class="impressum-section">
+<body onload="includeHTML()">
+    
+    <div class="main-section">
 
+        <div w3-include-html="templates/menu.html"></div>
+
+        <div class="impressum-section">
+
+            <div class="headline">
+                Impressum
             </div>
+
+            <div class="content-container"> 
+
+                <div class='impressum'>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <p>Max Muster <br>
+                        Musterweg<br>
+                        12345 Musterstadt <br>
+                    </p>
+                    <p> <strong>Vertreten durch: </strong><br>
+                        Max Muster<br>
+                    </p>
+                    <p><strong>Kontakt:</strong> <br>
+                        Telefon: 01234-789456<br>
+                        Fax: 1234-56789<br>
+                        E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a></br></p>
+                    <p><strong>Umsatzsteuer-ID: </strong> <br>
+                        Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: Musterustid.<br><br>
+                        <strong>Wirtschafts-ID: </strong><br>
+                        Musterwirtschaftsid<br>
+                    </p>
+                    <p><strong>Aufsichtsbehörde:</strong><br>
+                        Musteraufsicht Musterstadt<br></p><br>
+                </div>
+
         </div>
-    </body>
+
+        </div>
+    </div>
+</body>
+
 </html>

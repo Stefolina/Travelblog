@@ -1,8 +1,8 @@
 /*main stuff*/
+
 body {
     margin: 0;
     background-color: rgb(245,242,238);
-   
 }
 
 .overall-destination {
@@ -10,6 +10,7 @@ body {
 } 
 
 /*second section*/
+
 .second-section {
     background-image: url(/img/world.jpeg);
     background-size: contain; 
@@ -28,42 +29,56 @@ body {
     }
 }
 
+/* Header section */
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.header-icon { 
+    width: 50px;
+    height: 50px;
+}
+
 .h1-heading {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-top: 70px;
-    margin-bottom: 70px
+    margin-bottom: 70px;
+    font-family: 'Special Elite', cursive;
+    color: rgb(170, 163, 157);
 }
 
 
-.w-100 {
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-}
+/* Continent Containers */
 
 
 .continent-containers {
     margin-top: 50px;
+    margin-left: 140px;
 }
 
-.europe-container {
-    width: 700px;
+.container-div {
+    width: 900px;
     height: 300px;
     display: flex;
     background-color: white;
     border-radius: 4px;
     padding-left: 10px;
     margin-left: 17px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     box-shadow:rgb(240,232,228) 0px 1px 4px;
-
+    box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
+    font-family: 'Montserrat', sans-serif !important;
     
 }
 
 .h3-headings {
     margin-left: 22px;
     margin-top: 20px;
+    font-family: 'Montserrat', sans-serif !important;
 }
   

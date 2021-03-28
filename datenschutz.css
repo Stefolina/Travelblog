@@ -1,4 +1,5 @@
 /*main stuff*/
+
 body {
     margin: 0;
 }
@@ -8,9 +9,35 @@ body {
 }
 
 /*second section*/
-.second-section {
+
+.datenschutz-section {
+    background-image: url(/img/world.jpeg);
+    background-size: contain;
+    width: 100%;
     animation: 1s flyIn ease-out;
 }
+
+.headline {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.content-container {
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-right: 30px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 
 @keyframes flyIn {
     from {
