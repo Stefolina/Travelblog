@@ -1,7 +1,10 @@
 /**
  * profildata Definition
  */
-let profildata = [];
+let usernames = [];
+let prenames = [];
+let familynames = [];
+let emails = [];
 
 /**
  * create a new profile
@@ -12,24 +15,29 @@ function createprofil() {
     let familyname = document.getElementById("familyname").value;
     let email = document.getElementById("email").value;
 
-    profildata.push(username);
-    profildata.push(prename);
-    profildata.push(familyname);
-    profildata.push(email);
+    usernames.push(username);
+    prenames.push(prename);
+    familynames.push(familyname);
+    emails.push(email);
 
     showprofil();
 }
 
 function showprofil(){
-        for (let index = 0; index < profildata.length; index++) {
-            let profil = profildata[index]
-        document.getElementById('newProfile').innerHTML = `
-        <div class="profil-div">
-            ${profil[username]}<br>
-            ${profil[prename]}<br>
-            ${profil[familyname]}<br>
-            ${profil[email]}<br>
-        </div>
-    `; 
+
+    let profil = document.getElementById('newProfile');
+
+    profil.innerHTML = ''; 
+
+    for (let index = 0; index < usernames.length; index++) {
+
+        profil.innerHTML += `
+            <div class="profil-div">
+                ${usernames[index]}<br>
+                ${prenames[index]}<br>
+                ${familynames[index]}<br>
+                ${emails[index]}<br>
+            </div>
+        `;
     }
 }
