@@ -36,7 +36,7 @@ body {
 .img-question {
     width: 120px;
     height: 120px; 
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom: 50px; 
     cursor: pointer; 
     transition: all 225ms ease-in-out;
@@ -44,6 +44,12 @@ body {
 
 .img-question:hover {
     transform: scale(1.2);
+}
+
+.text-question {
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-top: 80px; 
 }
 
 
@@ -101,6 +107,13 @@ body {
     cursor: pointer;
 }
 
+.buttons-overlay {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
 .post {
     width: 500px; 
     height: 150px; 
@@ -110,16 +123,12 @@ body {
     margin-top: 32px; 
 }
 
-.post-div {
-    display: flex; 
-    justify-content: center; 
-}
-
 .text-overlay {
     display: flex; 
     justify-content: center; 
     align-items: center; 
     padding: 8px; 
+    font-weight: bold; 
 }
 
 .input-section {
@@ -134,6 +143,7 @@ body {
     padding: 8px; 
     margin-bottom: 10px; 
     margin-top: 10px; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 .input-destination {
@@ -150,4 +160,13 @@ body {
     padding: 8px; 
     margin-bottom: 10px; 
     margin-top: 10px; 
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-text {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 20px;
 }

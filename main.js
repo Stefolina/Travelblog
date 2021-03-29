@@ -59,14 +59,12 @@ function showMain() {
         <div>
             <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
         
-            <div class="post-div">
-                <div id="conversation" class="post">
-                    ${destinations[i]}<br>
-                    ${titles[i]}<br>
-                    ${dates[i]}<br>
-                    <b>${names[i]}</b><br>
-                    ${questions[i]}<br>
-                </div>
+            <div id="conversation" class="post">
+                ${destinations[i]}<br>
+                ${titles[i]}<br>
+                ${dates[i]}<br>
+                <b>${names[i]}</b><br>
+                ${questions[i]}<br>
             </div>
         </div>
     `; 

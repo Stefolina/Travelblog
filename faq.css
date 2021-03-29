@@ -58,3 +58,7 @@ body {
     text-align: justify; 
     padding-bottom: 30px;
 }
+
+.video {
+    width: 1000px;
+}
