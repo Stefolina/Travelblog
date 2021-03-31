@@ -87,13 +87,13 @@ body {
 }
 
 .container-div {
-    width: 95%;
+    width: 80%;
     height: 300px;
     display: flex;
     background-color: white;
     border-radius: 4px;
     padding-left: 10px;
-    margin-left: 17px;
+    margin-left: 110px;
     margin-bottom: 50px;
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
@@ -109,7 +109,7 @@ body {
 
 .continent-post {
 height: 200px;
-width:200px;
+width: 800px;
 border-color: rgb(170, 163, 157);
 border-width: 2px;
 border-style: solid;

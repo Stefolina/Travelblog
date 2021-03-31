@@ -5,7 +5,11 @@
  function selectAmerika() {
      document.getElementById('continents').innerHTML = `
      <div class="h3-headings"> <h3> Amerika </h3> 
-     <div class="continent-post"> BlaBla </div>
+     <div class="continent-post"> Bild <br>
+     Land <br>
+     Frage <br>
+     Kommentare <br>
+     </div>
      </div>`
     
  }
