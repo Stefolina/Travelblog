@@ -14,6 +14,18 @@ function closeOverlay() {
 
 
 /**
+ * Save Question in Backend
+ */
+
+ async function saveConversation() {
+    await backend.setItem('destinations', JSON.stringify(destinations));
+    await backend.setItem('dates', JSON.stringify(dates));
+    await backend.setItem('titles', JSON.stringify(titles));
+    await backend.setItem('names', JSON.stringify(names));
+    await backend.setItem('questions', JSON.stringify(questions));
+}
+
+/**
  * Post a question
  */
 
@@ -23,19 +35,7 @@ let titles = [];
 let names = []; 
 let questions = [];
 
-async function saveConversation() {
-
-    //console.log(allTasks);
-    //let conversationsAsString = JSON.stringify(conversations);
-
-    await backend.setItem('destinations', JSON.stringify(destinations));
-    await backend.setItem('dates', JSON.stringify(dates));
-    await backend.setItem('titles', JSON.stringify(titles));
-    await backend.setItem('names', JSON.stringify(names));
-    await backend.setItem('questions', JSON.stringify(questions));
-
-    //document.getElementById('myform').reset();
-}
+//let conversationcontainer = document.getElementById('deleteBox');
 
 function addPost() {
     let destination = document.getElementById('destination').value; 
@@ -62,7 +62,7 @@ function showMain() {
     for(let i = 0; i < questions.length; i++) {
 
         conversations.innerHTML += `
-        <div>
+        <div id="deleteBox">
             <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(${i}); addPost();">
         
             <div id="conversation" class="post">
@@ -97,8 +97,11 @@ function removePost(itemi) {
     titles.splice(itemi, 1);
     names.splice(itemi, 1);
     questions.splice(itemi, 1); 
+    //conversationcontainer.innerHTML = '';
 
     backend.deleteItem('conversations');
+
+    //document.getElementById('löschdichduStück').remove; 
 }
 
 //localStorage.setItem('myID', new Date ().getTime());

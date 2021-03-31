@@ -10,15 +10,20 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
  */
 
 /*Definition for backend functions*/
-let conversations = [];
+let conversation = [];
 
 
 /**
  * async function for downloading data from backend to required pages
  */
-async function loadAllConversations() {
+ async function loadAllConversations() {
     await downloadFromServer();
-    conversations = JSON.parse(backend.getItem('conversations')) || [];
+
+    destinations = jsonFromServer['destinations'] ? JSON.parse(jsonFromServer['destinations']) : [];
+    dates = jsonFromServer['dates'] ? JSON.parse(jsonFromServer['dates']) : [];
+    titles = jsonFromServer['titles'] ? JSON.parse(jsonFromServer['titles']) : [];
+    names = jsonFromServer['names'] ? JSON.parse(jsonFromServer['names']) : [];
+    questions = jsonFromServer['questions'] ? JSON.parse(jsonFromServer['questions']) : [];
 }
 
 
