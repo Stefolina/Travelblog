@@ -23,13 +23,18 @@ let titles = [];
 let names = []; 
 let questions = [];
 
-async function saveConversation(conversation) {
-    conversations.push(conversation);
-    //console.log(allTasks);
-    let conversationsAsString = JSON.stringify(conversations);
-    await backend.setItem('conversations', conversationsAsString);
+async function saveConversation() {
 
-    document.getElementById('myform').reset();
+    //console.log(allTasks);
+    //let conversationsAsString = JSON.stringify(conversations);
+
+    await backend.setItem('destinations', JSON.stringify(destinations));
+    await backend.setItem('dates', JSON.stringify(dates));
+    await backend.setItem('titles', JSON.stringify(titles));
+    await backend.setItem('names', JSON.stringify(names));
+    await backend.setItem('questions', JSON.stringify(questions));
+
+    //document.getElementById('myform').reset();
 }
 
 function addPost() {
@@ -45,6 +50,7 @@ function addPost() {
     names.push(name);
     questions.push(question);
 
+    saveConversation();
     showMain();
 }
 
@@ -57,7 +63,7 @@ function showMain() {
 
         conversations.innerHTML += `
         <div>
-            <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(' + index + '); addPost();">
+            <img src="icons/X.svg" class="button-close-overlay" onclick="removePost(${i}); addPost();">
         
             <div id="conversation" class="post">
                 ${destinations[i]}<br>
@@ -94,3 +100,7 @@ function removePost(itemi) {
 
     backend.deleteItem('conversations');
 }
+
+//localStorage.setItem('myID', new Date ().getTime());
+
+//new Date().getTime()
