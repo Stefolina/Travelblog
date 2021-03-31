@@ -53,6 +53,31 @@ body {
 }
 
 
+
+/* Buttons for selecting the continents */
+
+.select-continents {
+    margin-left: 206px;
+}
+
+.first-row-btn {
+    margin-bottom: 10px;
+}
+
+.continent-btn {
+    width: 250px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.amerika {
+    background: url(/img/america.jpg);
+    background-repeat: 3px 5px no-repeat;
+}
+
+
+
 /* Continent Containers */
 
 
@@ -62,7 +87,7 @@ body {
 }
 
 .container-div {
-    width: 900px;
+    width: 95%;
     height: 300px;
     display: flex;
     background-color: white;
@@ -73,7 +98,7 @@ body {
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
     font-family: 'Montserrat', sans-serif !important;
-    
+    margin-top: 80px;  
 }
 
 .h3-headings {
@@ -81,4 +106,14 @@ body {
     margin-top: 20px;
     font-family: 'Montserrat', sans-serif !important;
 }
+
+.continent-post {
+height: 200px;
+width:200px;
+border-color: rgb(170, 163, 157);
+border-width: 2px;
+border-style: solid;
+}
+
+
   
