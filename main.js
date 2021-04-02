@@ -21,14 +21,14 @@ async function addPost() {
     let destination = document.getElementById('destination').value; 
     let date = document.getElementById('date').value;
     let title = document.getElementById('title').value; 
-    let name = document.getElementById('name').value; 
+    let user = document.getElementById('user').value; 
     let question = document.getElementById('question').value; 
 
     conversation.push({
         "destination": destination,
         "date": date,
         "title": title,
-        "name": name,
+        "user": user,
         "question": question
     });
 
@@ -56,7 +56,7 @@ function showMain() {
                 ${conversation[i]['destination']}<br>
                 ${conversation[i]['date']}<br>
                 ${conversation[i]['title']}<br>
-                <b>${conversation[i]['name']}</b><br>
+                <b>${conversation[i]['user']}</b><br>
                 ${conversation[i]['question']}<br>
             </div>
         </div>
