@@ -19,11 +19,7 @@ let conversation = [];
  async function loadAllConversations() {
     await downloadFromServer();
 
-    destinations = jsonFromServer['destinations'] ? JSON.parse(jsonFromServer['destinations']) : [];
-    dates = jsonFromServer['dates'] ? JSON.parse(jsonFromServer['dates']) : [];
-    titles = jsonFromServer['titles'] ? JSON.parse(jsonFromServer['titles']) : [];
-    names = jsonFromServer['names'] ? JSON.parse(jsonFromServer['names']) : [];
-    questions = jsonFromServer['questions'] ? JSON.parse(jsonFromServer['questions']) : [];
+    conversation = jsonFromServer['conversation'] ? JSON.parse(jsonFromServer['conversation']) : [];
 }
 
 
