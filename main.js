@@ -32,6 +32,8 @@ async function addPost() {
 
     await backend.setItem('conversation', JSON.stringify(conversation));
 
+    localStorage.setItem('myID', new Date ().getTime());
+
     showMain();
 }
 
@@ -79,7 +81,5 @@ async function deletePost(itemi) {
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
 }
-
-//localStorage.setItem('myID', new Date ().getTime());
 
 //new Date().getTime()

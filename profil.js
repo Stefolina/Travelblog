@@ -6,6 +6,7 @@ let prenames = [];
 let familynames = [];
 let emails = [];
 
+
 /**
  * create a new profile
  */
@@ -23,6 +24,10 @@ function createprofil() {
     showprofil();
 }
 
+
+/**
+ * showing updated HTML
+ */
 function showprofil(){
 
     let profil = document.getElementById('newProfile');
