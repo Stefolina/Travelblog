@@ -81,5 +81,3 @@ async function deletePost(itemi) {
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
 }
-
-//new Date().getTime()
