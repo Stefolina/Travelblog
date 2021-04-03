@@ -49,7 +49,7 @@ function showMain() {
         conversations.innerHTML += `
         <div id="post">
             <div class="post">
-            <img src="icons/X.svg" class="button-close-overlay" onclick="deletePost(${i}); addPost();">
+            <img src="icons/X.svg" class="button-close-overlay" onclick="deletePost(${i})">
 
                 ${conversation[i]['destination']}<br>
                 ${conversation[i]['date']}<br>
