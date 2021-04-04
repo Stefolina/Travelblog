@@ -25,44 +25,40 @@
   <script src="destinations.js"></script>
 </head>
 
-<body onload="includeHTML(); loadAllConversations()">
+<body onload="includeHTML(); initMain();">
 
 
 
-  <div class="overall-destination">
+    <div class="overall-destination">
 
-    <div w3-include-html="templates/menu.html"></div>
+      <div w3-include-html="templates/menu.html"></div>
 
-    <div class="second-section">
+      <div class="second-section">
 
-      <div class="header-section">
-        <img src="icons/destinations.svg" class="header-icon">
-        <h1 class="h1-heading">Destinations </h1>
-      </div>
-
-      <div class="select-continents">
-
-        <div class="first-row-btn">
-          <button class="continent-btn amerika" onclick="selectAmerika()"> Amerika </button>
-          <button class="continent-btn südamerika" onclick="selectSüdamerika()"> Südamerika </button>
-          <button class="continent-btn europa" onclick="selectEuropa()"> Europa </button>
+        <div class="header-section">
+          <img src="icons/destinations.svg" class="header-icon">
+          <h1 class="h1-heading">Destinations </h1>
         </div>
 
-        <div class="second-row-btn"> 
-        <button class="continent-btn asien" onclick="selectAsien()"> Asien </button>
-        <button class="continent-btn australien" onclick="selectAustralien()"> Australien </button>
-        <button class="continent-btn antarktis" onclick="selectAntarktis()"> Antarktis </button>
-      </div> 
+        <div class="select-continents">
+          <div class="first-row-btn">
+            <button class="continent-btn" style="background-color: rgb(245, 238, 205);" onclick="selectAsien()"> Asien </button>
+            <button class="continent-btn" style="background-color: rgb(100, 165, 187);" onclick="selectAfrika(); showPosts(destination)"> Afrika </button>
+            <button class="continent-btn" style="background-color: rgb(255, 202, 228);" onclick="selectNordamerika()"> Nordamerika </button>
+            <button class="continent-btn" style="background-color: rgb(150, 147, 178);" onclick="selectSüdamerika()"> Südamerika </button>
+            <button class="continent-btn" style="background-color: rgb(181, 240, 218);" onclick="selectEuropa()"> Europa </button>
+            <button class="continent-btn" style="background-color: rgb(255, 184, 136);" onclick="selectAustralien()"> Australien </button>
+            <button class="continent-btn" style="background-color: rgb(195, 195, 195);" onclick="selectAntarktis()"> Antarktis </button>
+          </div>
+        </div>
+
+          <div id="continents" class="container-div">
+
+            Wähle deine Reiseziel!
+
+          </div>
 
       </div>
-
-      <div id="continents" class="container-div">
-
-        Wähle deine Reiseziel!
-
-      </div>
-
-    </div>
 
 
 

@@ -16,6 +16,9 @@ body {
     background-size: contain; 
     width: 100%;
     animation: 1s flyIn ease-out;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 @keyframes flyIn {
@@ -47,7 +50,7 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-bottom: 70px;
+    margin-bottom: 55px;
     font-family: 'Special Elite', cursive;
     color: rgb(170, 163, 157);
 }
@@ -57,29 +60,30 @@ body {
 /* Buttons for selecting the continents */
 
 .select-continents {
-    margin-left: 206px;
-}
-
-.first-row-btn {
-    margin-bottom: 10px;
+    display: flex; 
+    justify-content: center; 
+    margin-top: 45px;
 }
 
 .continent-btn {
-    width: 250px;
-    height: 100px;
+    width: 150px;
+    height: 50px;
     margin-left: 10px;
-    margin-right: 10px
+    margin-right: 10px;
+    border: none; 
+    border-radius: 5%;
+    opacity: 0.9;
+    transition: all 225ms ease-in-out;
+    cursor: pointer; 
 }
 
-.amerika {
-    background: url(/img/america.jpg);
-    background-repeat: 3px 5px no-repeat;
+.continent-btn:hover {
+    font-weight: bold; 
+    transform: scale(1.1);
 }
-
 
 
 /* Continent Containers */
-
 
 .continent-containers {
     margin-top: 50px;
@@ -88,17 +92,17 @@ body {
 
 .container-div {
     width: 80%;
-    height: 300px;
+    height: 500px;
     display: flex;
+    justify-content: center;
     background-color: white;
     border-radius: 4px;
     padding-left: 10px;
-    margin-left: 110px;
     margin-bottom: 50px;
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
     font-family: 'Montserrat', sans-serif !important;
-    margin-top: 80px;  
+    margin-top: 55px;  
 }
 
 .h3-headings {
@@ -108,11 +112,11 @@ body {
 }
 
 .continent-post {
-height: 200px;
-width: 800px;
-border-color: rgb(170, 163, 157);
-border-width: 2px;
-border-style: solid;
+    height: 200px;
+    width: 800px;
+    border-color: rgb(170, 163, 157);
+    border-width: 2px;
+    border-style: solid;
 }
 
 
