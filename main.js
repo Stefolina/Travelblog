@@ -64,11 +64,12 @@ function showMain() {
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
                 <div class="question">${conversation[i]['question']}</div><br>
                 <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
+                ______________________________________
                 <div class="comment-row">
                 <img src="icons/questionanswer.svg" class="comment-icons">
                 <img src="icons/like.svg" class="comment-icons">
                 </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
             </div>
         </div>
     `; 
