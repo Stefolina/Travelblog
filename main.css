@@ -34,11 +34,10 @@ body {
 }
 
 .img-question {
-    width: 120px;
-    height: 120px; 
-    margin-top: 30px;
-    margin-bottom: 30px; 
-    cursor: pointer; 
+    width: 70px;
+    height: 70px;
+    margin-top: 50px;
+    cursor: pointer;
     transition: all 225ms ease-in-out;
 }
 
@@ -47,7 +46,7 @@ body {
 }
 
 .text-question {
-    font-size: 20px; 
+    font-size: 15px; 
     font-weight: bold; 
     margin-bottom: 10px; 
 }
@@ -62,7 +61,7 @@ body {
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
     width: 115vh;
-    height: 60vh;
+    height: 70vh;
     text-align: center;
     background-color: white;
     overflow-y: auto;
@@ -116,12 +115,13 @@ body {
 }
 
 
-/** Input/Post Question Section */
+/** Input Question Section */
 
 .button-close-overlay {
     display: flex;
-    width: 80px;
+    width: 20px;
     height: 40px;
+    margin-top: -10px;
     transition: all ease-in-out 225ms;
     cursor: pointer;
 }
@@ -131,15 +131,6 @@ body {
     justify-content: center; 
     align-items: center; 
     margin-top: 20px; 
-}
-
-.post {
-    width: 500px; 
-    height: 150px; 
-    border: 1px solid lightgray; 
-    padding: 8px; 
-    margin-bottom: 16px; 
-    margin-top: 32px; 
 }
 
 .text-overlay {
@@ -184,20 +175,59 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/*profil overlay*/
-.header-div {
+/** Post Question Section */
+
+.button-delete-post {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header {
-    font-family: 'Special Elite', cursive;
-    justify-content: center;
-    color: rgb(170, 163, 157);
-}
-
-.profil-pic {
-    width: 40px;
+    width: 20px;
     height: 40px;
+    margin-top: -10px;
+    transition: all ease-in-out 225ms;
+    cursor: pointer;
+}
+
+.button-delete-post:hover {
+    transform: scale(1.5);
+}
+
+.post {
+    width: 650px;
+    height: 200px;
+    border: 1px solid lightgray;
+    padding: 8px;
+    margin-bottom: 30px;
+    background-color: rgb(190,224,217);
+    overflow-y: auto;
+}
+
+.profilpic {
+    width: 50px;
+    height: 50px;
+}
+
+.destination {
+    font-family: 'Special Elite', cursive;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.destination-txt {
+    display: flex;
+    margin-left: 230px;
+}
+
+.date {
+    display: flex;
+    font-size: 10px;
+    font-family: 'Montserrat';
+    margin-left: 230px;
+}
+
+.title {
+    display: flex;
+}
+
+.question {
+    display: flex;
 }

@@ -51,12 +51,14 @@ function showMain() {
         conversations.innerHTML += `
         <div id="post">
             <div class="post">
-            <img src="icons/X.svg" class="button-close-overlay" onclick="deletePost(${i})">
-
-                ${conversation[i]['destination']}<br>
-                ${conversation[i]['date']}<br>
-                ${conversation[i]['title']}<br>
-                ${conversation[i]['question']}<br>
+                <div class="destination">
+                    <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+                    <div class="date">${conversation[i]['date']}<br></div>
+                    <div class="destination-txt">${conversation[i]['destination']}</div><br>
+                </div>
+                <div class="title"><b>${conversation[i]['title']}</b></div><br>
+                <div class="question">${conversation[i]['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
             </div>
         </div>
     `; 

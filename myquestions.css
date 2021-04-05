@@ -75,38 +75,3 @@ body {
     margin-left: 50px;
     margin-right: 50px;
 }
-
-.answered {
-    display: flex;
-    background-color: rgb(220,218,216);
-    width: 30vh;
-    height: 60vh;
-    padding: 10px;
-    justify-content: center;
-}
-
-.unanswered {
-    display: flex;
-    background-color: rgb(220,218,216);
-    width: 30vh;
-    height: 60vh;
-    padding: 10px;
-    justify-content: center;
-}
-
-.archiv {
-    display: flex;
-    background-color: rgb(220,218,216);
-    width: 30vh;
-    height: 60vh;
-    padding: 10px;
-    justify-content: center;
-}
-
-.post {
-    display: flex;
-    background-color: white;
-    width: 20vh;
-    height: 10vh;
-    cursor: all-scroll;
-}

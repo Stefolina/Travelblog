@@ -19,7 +19,7 @@
  */
 function showAfrika(afrika) {
 
-    getConversationsByDestination(destination);
+    getConversationsByDestination(afrika);
 
         let afrika = destination['afrika'];
     
