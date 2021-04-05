@@ -58,16 +58,23 @@ function showMain() {
             <div class="post">
                 <div class="destination">
                     <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-                    <div class="date">${conversation[i]['date']}<br></div>
-                    <div class="destination-txt">${conversation[i]['destination']}</div><br>
+                    ${conversation[i]['destination']}<br>
                 </div>
+                <div class="date">${conversation[i]['date']}<br></div>
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
                 <div class="question">${conversation[i]['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+                <div class="comment-row">
+                <img src="icons/questionanswer.svg" class="comment-icons">
+                <img src="icons/like.svg" class="comment-icons">
+                </div>
             </div>
         </div>
     `; 
     }
+
+    coloredCategory(conversation['destination'], i);
 }
 
 

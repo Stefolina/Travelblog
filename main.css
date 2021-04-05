@@ -200,8 +200,9 @@ body {
 }
 
 .profilpic {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+    margin-bottom: -15px;
 }
 
 .destination {
@@ -213,20 +214,46 @@ body {
 
 .destination-txt {
     display: flex;
-    margin-left: 230px;
 }
 
 .date {
     display: flex;
     font-size: 10px;
     font-family: 'Montserrat';
-    margin-left: 230px;
+    margin-top: 5px;
 }
 
 .title {
     display: flex;
+    margin-bottom: -10px;
 }
 
 .question {
     display: flex;
+    border: 2px;
+    box-shadow: 10px 1px 20px 1px rgba(0, 0, 0, 0.2);
+    
+}
+
+.title-row {
+    display: flex;
+}
+
+.comment-row {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.comment-icons {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    transition: all ease-in-out 225ms;
+    cursor: pointer;
+}
+
+.comment-icons:hover {
+    transform: scale(1.1);
 }
