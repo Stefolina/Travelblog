@@ -35,6 +35,11 @@ async function addPost() {
     localStorage.setItem('myID', new Date ().getTime());
 
     showMain();
+
+    document.getElementById('destination').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('title').value = '';
+    document.getElementById('question').value = '';
 }
 
 
