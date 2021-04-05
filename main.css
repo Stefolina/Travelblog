@@ -119,9 +119,8 @@ body {
 
 .button-close-overlay {
     display: flex;
-    width: 20px;
+    width: 80px;
     height: 40px;
-    margin-top: -10px;
     transition: all ease-in-out 225ms;
     cursor: pointer;
 }
