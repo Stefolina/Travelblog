@@ -30,6 +30,7 @@ async function addPost() {
         "date": date,
         "title": title,
         "question": question,
+        "comments": []
         //"user": user
     });
 
@@ -84,6 +85,12 @@ function showMain() {
             color = "rgb(195,195,195)";
         }
 
+        let commentsHTML = '';
+
+        //for (let j = 0; j < comments.length; j++) {
+        //    const comment = comments[j];
+        //   commentsHTML += `<div>${comment}</div>`;
+        //}
 
         conversations.innerHTML += `
         <div id="post">
@@ -92,18 +99,34 @@ function showMain() {
                     <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
                     ${conversation[i]['destination']}<br>
                 </div>
+
                 <div class="date">${conversation[i]['date']}<br></div>
+
                 <div class="user-area">
                     <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
                     <div>User</div>
                 </div>
+
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
+
                 <div class="question">${conversation[i]['question']}</div><br>
+
                 <img src="icons/linecool.png" class="line">
+
                 <div class="comment-row">
                     <img src="icons/questionanswer.svg" class="comment-icons">
-                    <input class="comment-input" placeholder="Schreibe einen Kommentar">
+
+                    <form onclick="Enter(); return false;">
+                        <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
+
+                        <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
+                    </form>
+
                     <img src="icons/like.svg" class="comment-icons">
+                </div>
+
+                <div class="commentrow" id="comments">
+                    ${commentsHTML}
                 </div>
             </div>
         </div>
@@ -112,11 +135,34 @@ function showMain() {
 }
 
 /**
+ * Function to push Enter for posting a comment
+ */
+ function Enter() {
+     
+}
+
+/**
+ * Function to add a Comment to post
+ */
+
+ function addComment(postIndex) {
+    let myComment = document.getElementById('comment' + postIndex).value;
+
+    conversation[postIndex].comments.push(myComment); 
+
+    //savePosts();
+
+    showMain(); 
+}
+
+
+/**
  * load all stuff from backend
  */
 async function initMain(){
     await loadAllConversations();
     showMain();
+    Enter(); 
 }
 
 

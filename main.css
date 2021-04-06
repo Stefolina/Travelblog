@@ -285,3 +285,10 @@ body {
     align-items: center; 
     margin-bottom: 15px; 
 }
+
+.button-comment { 
+    border: none; 
+    font-size: 15px; 
+    font-weight: bold; 
+    cursor: pointer;
+}
