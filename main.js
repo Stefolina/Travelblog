@@ -134,12 +134,14 @@ function showMain() {
     }
 }
 
+
 /**
  * Function to push Enter for posting a comment
- */
+ 
  function Enter() {
      
-}
+}*/
+
 
 /**
  * Function to add a Comment to post
