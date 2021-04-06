@@ -98,10 +98,10 @@ function showMain() {
                 <div class="question">${conversation[i]['question']}</div><br>
                 <img src="icons/linecool.png" class="line">
                 <div class="comment-row">
-                <img src="icons/questionanswer.svg" class="comment-icons">
-                <img src="icons/like.svg" class="comment-icons">
+                    <img src="icons/questionanswer.svg" class="comment-icons">
+                    <input class="comment-input" placeholder="Schreibe einen Kommentar">
+                    <img src="icons/like.svg" class="comment-icons">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
             </div>
         </div>
     `; 
