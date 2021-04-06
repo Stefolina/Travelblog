@@ -22,7 +22,7 @@ async function addPost() {
     let date = document.getElementById('date').value;
     let title = document.getElementById('title').value; 
     let question = document.getElementById('question').value; 
-    let user = document.getElementById('user').value; 
+    //let user = document.getElementById('user').value; 
 
     conversation.push({
         "id": new Date().getTime(),
@@ -30,7 +30,7 @@ async function addPost() {
         "date": date,
         "title": title,
         "question": question,
-        "user": user
+        //"user": user
     });
 
     await backend.setItem('conversation', JSON.stringify(conversation));
@@ -93,7 +93,10 @@ function showMain() {
                     ${conversation[i]['destination']}<br>
                 </div>
                 <div class="date">${conversation[i]['date']}<br></div>
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+                <div class="user-area">
+                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+                    <div>User</div>
+                </div>
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
                 <div class="question">${conversation[i]['question']}</div><br>
                 <img src="icons/linecool.png" class="line">
