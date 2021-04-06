@@ -24,22 +24,29 @@ function showAfrika() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 
@@ -55,22 +62,29 @@ function showAsien() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 
@@ -86,22 +100,29 @@ function showNordamerika() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
+            <div class="continent-post-d"> 
+                    <div class="destination-d">${element['destination']}<br></div>
+
+                    <div class="date-d">${element['date']}<br></div>
+
+                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                    <div class="title-d"><b>${element['title']}</b></div><br>
+
+                    <div class="question-d">${element['question']}</div><br>
+
+                    <img src="icons/linecool.png" class="line">
+                    
+                    <div class="comment-row-d">
+                            <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                            <form onclick="Enter(); return false;">
+                                <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                            </form>
+
+                            <img src="icons/like.svg" class="comment-icons-d">
+                    </div>
             </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
-                </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
         `;
     }
 
@@ -116,22 +137,29 @@ function showSüdamerika() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 
@@ -147,22 +175,29 @@ function showEuropa() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 
@@ -178,22 +213,29 @@ function showAustralien() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 
@@ -209,22 +251,29 @@ function showAntarktis() {
         const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML = `
-        <div class="continent-post"> 
-            <div class="destination">
-             
-                ${element['destination']}<br>
-            </div>
-            <div class="date">${element['date']}<br></div>
-            <div class="title"><b>${element['title']}</b></div><br>
-            <div class="question">${element['question']}</div><br>
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-            ______________________________________
-            <div class="comment-row">
-            <img src="icons/questionanswer.svg" class="comment-icons">
-            <img src="icons/like.svg" class="comment-icons">
+            <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+
+                <div class="date-d">${element['date']}<br></div>
+
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+
+                <div class="title-d"><b>${element['title']}</b></div><br>
+
+                <div class="question-d">${element['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+                
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+
+                        <img src="icons/like.svg" class="comment-icons-d">
                 </div>
-                <input class="comment-input" placeholder="Schreibe einen Kommentar">
-        </div>
+            </div>
         `;
     }
 

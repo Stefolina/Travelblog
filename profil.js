@@ -37,11 +37,14 @@ function showprofil(){
     for (let index = 0; index < usernames.length; index++) {
 
         profil.innerHTML += `
-            <div class="profil-div">
-                ${usernames[index]}<br>
-                ${prenames[index]}<br>
-                ${familynames[index]}<br>
-                ${emails[index]}<br>
+            <div class="profil-maindiv>
+                <div class="profil-div">
+                    <img src="icons/profilpic.svg" class="profil-img"><br>
+                    ${usernames[index]}<br>
+                    ${prenames[index]}<br>
+                    ${familynames[index]}<br>
+                    ${emails[index]}<br>
+                </div>
             </div>
         `;
     }
