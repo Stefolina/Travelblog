@@ -10,21 +10,19 @@
  * Function to Filter destination
  */
  function getConversationsByDestination(destination) {
-    return conversations.filter(c => c ['destinations'] == destination);
+    return conversation.filter(c => c ['destination'] == destination);
 }
 
 
 /**
  * Functions for selecting buttons with current continent 
  */
-function showAfrika(afrika) {
+function showAfrika() {
 
-    getConversationsByDestination(destination);
-
-        let afrika = destination['afrika'];
+    let filteredConversation =  getConversationsByDestination('Afrika');
     
-        for (let index = 0; index < afrika.length; index++) {
-            const element = afrika[index];
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
         
         document.getElementById('continents').innerHTML =+ `
         <div class="h3-headings"> <h3> Afrika </h3> 
@@ -35,8 +33,8 @@ function showAfrika(afrika) {
             ${element[index]['question']}<br>
             </div>
         </div>
-        `
-        }
+        `;
+    }
 
     document.getElementById('continents').style.backgroundImage = "url('img/africa.jpg')";
     document.getElementById('continents').style.backgroundPosition = "center";
