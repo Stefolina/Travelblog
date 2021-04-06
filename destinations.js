@@ -18,73 +18,217 @@
  * Functions for selecting buttons with current continent 
  */
 function showAfrika() {
-
     let filteredConversation =  getConversationsByDestination('Afrika');
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML =+ `
-        <div class="h3-headings"> <h3> Afrika </h3> 
+        document.getElementById('continents').innerHTML = `
         <div class="continent-post"> 
-            ${element[index]['destination']}<br>
-            ${element[index]['date']}<br>
-            ${element[index]['title']}<br>
-            ${element[index]['question']}<br>
+            <div class="destination">
+             
+                ${element['destination']}<br>
             </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
         </div>
         `;
     }
 
-    document.getElementById('continents').style.backgroundImage = "url('img/africa.jpg')";
+    document.getElementById('continents').style.backgroundImage = "url('img/africa.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "top";
+}
+
+
+function showAsien() {
+    let filteredConversation =  getConversationsByDestination('Asien');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/asien.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }
 
 
- function showAsien() {
-    document.getElementById('continents').innerHTML = `
-    <div class="h3-headings"> <h3> Asien </h3> 
-    <div class="continent-post"> BlaBla </div>
-    </div>`
-}
-
 function showNordamerika() {
-     document.getElementById('continents').innerHTML = `
-     <div class="h3-headings"> <h3> Nordamerika </h3> 
-     <div class="continent-post"> Bild <br>
-     Land <br>
-     Frage <br>
-     Kommentare <br>
-     </div>
-     </div>`
- }
+    let filteredConversation =  getConversationsByDestination('Nordamerika');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
 
- function showSüdamerika() {
-    document.getElementById('continents').innerHTML = `
-    <div class="h3-headings"> <h3> Südamerika </h3> 
-    <div class="continent-post"> BlaBla </div>
-    </div>`
+    document.getElementById('continents').style.backgroundImage = "url('img/nordamerika.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "top";
 }
+
+function showSüdamerika() {
+    let filteredConversation =  getConversationsByDestination('Südamerika');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/südamerika.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "center";
+}
+
 
 function showEuropa() {
-    document.getElementById('continents').innerHTML = `
-    <div class="h3-headings"> <h3> Europa </h3> 
-    <div class="continent-post"> BlaBla </div>
-    </div>`
+    let filteredConversation =  getConversationsByDestination('Europa');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/europa.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "center";
 }
 
 
 function showAustralien() {
-    document.getElementById('continents').innerHTML = `
-    <div class="h3-headings"> <h3> Australien </h3> 
-    <div class="continent-post"> BlaBla </div>
-    </div>`
+    let filteredConversation =  getConversationsByDestination('Australien');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/australien.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "center";
 }
 
+
 function showAntarktis() {
-    document.getElementById('continents').innerHTML = `
-    <div class="h3-headings"> <h3> Antarktis</h3> 
-    <div class="continent-post"> BlaBla </div>
-    </div>`
+    let filteredConversation =  getConversationsByDestination('Antarktis');
+    
+    for (let index = 0; index < filteredConversation.length; index++) {
+        const element = filteredConversation[index];
+        
+        document.getElementById('continents').innerHTML = `
+        <div class="continent-post"> 
+            <div class="destination">
+             
+                ${element['destination']}<br>
+            </div>
+            <div class="date">${element['date']}<br></div>
+            <div class="title"><b>${element['title']}</b></div><br>
+            <div class="question">${element['question']}</div><br>
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+            ______________________________________
+            <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <input class="comment-input" placeholder="Schreibe einen Kommentar">
+        </div>
+        `;
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "center";
 }
 

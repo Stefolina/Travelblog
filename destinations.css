@@ -62,17 +62,17 @@ body {
 .select-continents {
     display: flex; 
     justify-content: center; 
-    margin-top: 45px;
+    margin-top: 10px;
 }
 
 .continent-btn {
     width: 150px;
     height: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     border: none; 
     border-radius: 5%;
-    opacity: 0.9;
+    opacity: 0.7;
     transition: all 225ms ease-in-out;
     cursor: pointer; 
 }
@@ -80,6 +80,11 @@ body {
 .continent-btn:hover {
     font-weight: bold; 
     transform: scale(1.1);
+}
+
+.first-row-btn{
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -102,7 +107,7 @@ body {
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
     font-family: 'Montserrat', sans-serif !important;
-    margin-top: 55px;  
+    margin-top: 20px;  
 }
 
 .h3-headings {
@@ -112,12 +117,16 @@ body {
 }
 
 .continent-post {
-    height: 200px;
-    width: 800px;
-    border-color: rgb(170, 163, 157);
-    border-width: 2px;
-    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    margin-top: 60px;
+    height: 230px;
+    border: 1px solid lightgray;
+    padding: 8px;
+    margin-bottom: 30px;
+    background-color: white;
+    opacity: 0.9;
+    overflow-y: auto;
 }
-
-
   

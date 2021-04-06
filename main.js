@@ -22,17 +22,18 @@ async function addPost() {
     let date = document.getElementById('date').value;
     let title = document.getElementById('title').value; 
     let question = document.getElementById('question').value; 
+    let user = document.getElementById('user').value; 
 
     conversation.push({
+        "id": new Date().getTime(),
         "destination": destination,
         "date": date,
         "title": title,
-        "question": question
+        "question": question,
+        "user": user
     });
 
     await backend.setItem('conversation', JSON.stringify(conversation));
-
-    localStorage.setItem('myID', new Date ().getTime());
 
     showMain();
 
@@ -53,18 +54,49 @@ function showMain() {
 
     for(let i = 0; i < conversation.length; i++) {
 
+        let color = 'blue';
+
+        if(conversation[i]['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+            
+        if(conversation[i]['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+
+        if(conversation[i]['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+
+        if(conversation[i]['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+
+        if(conversation[i]['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+
+        if(conversation[i]['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+
+        if(conversation[i]['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+
+
         conversations.innerHTML += `
         <div id="post">
             <div class="post">
-                <div class="destination">
+                <div class="destination" style="color: ${color};">
                     <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
                     ${conversation[i]['destination']}<br>
                 </div>
                 <div class="date">${conversation[i]['date']}<br></div>
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
                 <div class="question">${conversation[i]['question']}</div><br>
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-                ______________________________________
+                <img src="icons/linecool.png" class="line">
                 <div class="comment-row">
                 <img src="icons/questionanswer.svg" class="comment-icons">
                 <img src="icons/like.svg" class="comment-icons">
@@ -74,10 +106,7 @@ function showMain() {
         </div>
     `; 
     }
-
-    coloredCategory(conversation['destination'], i);
 }
-
 
 /**
  * load all stuff from backend

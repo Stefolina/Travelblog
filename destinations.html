@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="destinations.css">
   <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="main.css">
 
 
 
@@ -28,9 +29,7 @@
 
 <body onload="includeHTML(); initMain()">
 
-
-
-    <div class="overall-destination">
+  <div class="overall-destination">
 
       <div w3-include-html="templates/menu.html"></div>
 
@@ -42,72 +41,18 @@
         </div>
 
         <div class="select-continents">
-          <div class="first-row-btn">
-            <button class="continent-btn" style="background-color: rgb(245, 238, 205);" onclick="showAsien()"> Asien </button>
             <button class="continent-btn" style="background-color: rgb(100, 165, 187);" onclick="showAfrika()"> Afrika </button>
+            <button class="continent-btn" style="background-color: rgb(245, 238, 205);" onclick="showAsien()"> Asien </button>
             <button class="continent-btn" style="background-color: rgb(255, 202, 228);" onclick="showNordamerika()"> Nordamerika </button>
             <button class="continent-btn" style="background-color: rgb(150, 147, 178);" onclick="showSüdamerika()"> Südamerika </button>
             <button class="continent-btn" style="background-color: rgb(181, 240, 218);" onclick="showEuropa()"> Europa </button>
             <button class="continent-btn" style="background-color: rgb(255, 184, 136);" onclick="showAustralien()"> Australien </button>
             <button class="continent-btn" style="background-color: rgb(195, 195, 195);" onclick="showAntarktis()"> Antarktis </button>
-          </div>
         </div>
 
-          <div id="continents" class="container-div">
-
-            Wähle deine Reiseziel!
-
-          </div>
+          <div id="continents" class="container-div"></div>
 
       </div>
-
-
-
-    <!-- <div class="enclosing-container">
-      <h3 class="h3-headings"> Asien </h3>
-      <div id="europe-container" class="container-div">
-      </div>
   </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Afrika </h3>
-    <div id="america-container" class="container-div"> </div>
-  </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Nordamerika </h3>
-    <div id="asia-container" class="container-div"> </div>
-  </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Südamerika </h3>
-    <div id="asia-container" class="container-div"> </div>
-  </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Europa </h3>
-    <div id="asia-container" class="container-div"> </div>
-  </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Australien </h3>
-    <div id="asia-container" class="container-div"> </div>
-  </div>
-
-  <div class="enclosing-container">
-    <h3 class=h3-headings> Antarktis </h3>
-    <div id="asia-container" class="container-div"> </div>
-  </div>
-
-  </div> -->
-
-
-
-
-  </div>
-
-
-
 </body>
-
 </html>

@@ -180,7 +180,6 @@ body {
     display: flex;
     width: 20px;
     height: 40px;
-    margin-top: -10px;
     transition: all ease-in-out 225ms;
     cursor: pointer;
 }
@@ -191,25 +190,29 @@ body {
 
 .post {
     width: 650px;
-    height: 230px;
+    height: 240px;
     border: 1px solid lightgray;
-    padding: 8px;
+    padding: 5px;
     margin-bottom: 30px;
-    background-color: rgb(190,224,217);
+    background-color: rgb(231, 240, 238);
     overflow-y: auto;
 }
 
 .profilpic {
-    width: 35px;
-    height: 35px;
-    margin-bottom: -15px;
+    display: flex;
+    width: 30px;
+    height: 30px;
 }
 
 .destination {
     font-family: 'Special Elite', cursive;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 20px;
+    background-color: rgb(138, 138, 138);
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .destination-txt {
@@ -221,11 +224,13 @@ body {
     font-size: 10px;
     font-family: 'Montserrat';
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .title {
     display: flex;
     margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 .question {
@@ -234,6 +239,7 @@ body {
     box-shadow: 10px 1px 20px 1px rgba(0, 0, 0, 0.2);
     text-align: start;
     padding: 5px;
+    margin-bottom: -25px;
 }
 
 .title-row {
@@ -245,6 +251,7 @@ body {
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: -20px;
 }
 
 .comment-icons {
@@ -263,4 +270,8 @@ body {
     font-family: 'Montserrat';
     width: 60vh;
     background-color: rgb(225, 238, 235);
+}
+
+.line {
+    width: 630px;
 }

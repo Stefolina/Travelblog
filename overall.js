@@ -54,37 +54,3 @@ function includeHTML() {
         }
     }
 }
-
-
-/**
- * Defining backgroundcolor of Category
- */
- function coloredDestination(destination, index) {
-    if(destination == 'Asien'){
-        document.getElementById(`destination${index}`).style.color = "rgb(245,238,205)";
-    };
-
-    if(destination == 'Afrika'){
-        document.getElementById(`destination${index}`).style.color = "rgb(100,165,187)";
-    };
-
-    if(destination == 'Nordamerika'){
-        document.getElementById(`destination${index}`).style.color = "rgb(255,202,228)";
-    };
-
-    if(destination == 'Südamerika'){
-        document.getElementById(`destination${index}`).style.color = "rgb(150,147,178)";
-    };
-
-    if(destination == 'Europa'){
-        document.getElementById(`destination${index}`).style.color = "rgb(181,240,218)";
-    };
-
-    if(destination == 'Australien'){
-        document.getElementById(`destination${index}`).style.color = "rgb(255,184,136)";
-    };
-
-    if(destination == 'Antarktis'){
-        document.getElementById(`destination${index}`).style.color = "rgb(195,195,195)";
-    };
-}
