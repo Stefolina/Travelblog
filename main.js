@@ -49,89 +49,113 @@ async function addPost() {
  * show update version of html
  */
 function showMain() {
-    let conversations = document.getElementById('myposts'); 
-
-    conversations.innerHTML = '';  
+    document.getElementById('myposts').innerHTML = '';  
 
     for(let i = 0; i < conversation.length; i++) {
+        const conversations = conversation[i];
 
-        let color = 'blue';
+        let conversationHTML = '';
 
-        if(conversation[i]['destination'] == 'Afrika'){
-            color = "rgb(100,165,187)";
-        }
-            
-        if(conversation[i]['destination'] == 'Asien'){
-            color = "rgb(245,238,205)";
-        }
+            for (let j = 0; j < conversations.comments.length; j++) {
+                const comment = conversations.comments[j];
+                conversationHTML += `<div>${comment}</div>`;
+            }
 
-        if(conversation[i]['destination'] == 'Nordamerika'){
-            color = "rgb(255,202,228)";
-        }
+            document.getElementById('myposts').innerHTML += `
+            <div id="post">
+                <div class="post">
+                    <div class="destination" style="color: ${color};">
+                        <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+                        ${conversations[i]['destination']}<br>
+                    </div>
 
-        if(conversation[i]['destination'] == 'Südamerika'){
-            color = "rgb(150,147,178)";
-        }
+                    <div class="date">${conversations[i]['date']}<br></div>
 
-        if(conversation[i]['destination'] == 'Europa'){
-            color = "rgb(181,240,218)";
-        }
+                    <div class="user-area">
+                        <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+                        <div>User</div>
+                    </div>
 
-        if(conversation[i]['destination'] == 'Australien'){
-            color = "rgb(255,184,136)";
-        }
+                    <div class="title"><b>${conversations[i]['title']}</b></div><br>
 
-        if(conversation[i]['destination'] == 'Antarktis'){
-            color = "rgb(195,195,195)";
-        }
+                    <div class="question">${conversations[i]['question']}</div><br>
 
-        let commentsHTML = '';
+                    <img src="icons/linecool.png" class="line">
 
-        //for (let j = 0; j < comments.length; j++) {
-        //    const comment = comments[j];
-        //   commentsHTML += `<div>${comment}</div>`;
-        //}
+                    <div class="comment-row">
+                        <img src="icons/questionanswer.svg" class="comment-icons">
 
-        conversations.innerHTML += `
-        <div id="post">
-            <div class="post">
-                <div class="destination" style="color: ${color};">
-                    <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-                    ${conversation[i]['destination']}<br>
-                </div>
+                        <div>
+                            <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
 
-                <div class="date">${conversation[i]['date']}<br></div>
+                            <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
+                        </div>
 
-                <div class="user-area">
-                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-                    <div>User</div>
-                </div>
+                        <img src="icons/like.svg" class="comment-icons">
+                        <div class="badge" id="badge"></div>
+                    </div>
 
-                <div class="title"><b>${conversation[i]['title']}</b></div><br>
-
-                <div class="question">${conversation[i]['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-
-                <div class="comment-row">
-                    <img src="icons/questionanswer.svg" class="comment-icons">
-
-                    <form onclick="Enter(); return false;">
-                        <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-
-                        <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
-                    </form>
-
-                    <img src="icons/like.svg" class="comment-icons">
-                </div>
-
-                <div class="commentrow" id="comments">
-                    ${commentsHTML}
+                    <div class="commentrow" id="comments">
+                        ${conversationHTML}
+                    </div>
                 </div>
             </div>
-        </div>
-    `; 
-    }
+        `; 
+
+            let color = 'blue';
+
+            if(conversation[i]['destination'] == 'Afrika'){
+                color = "rgb(100,165,187)";
+            }
+                
+            if(conversation[i]['destination'] == 'Asien'){
+                color = "rgb(245,238,205)";
+            }
+
+            if(conversation[i]['destination'] == 'Nordamerika'){
+                color = "rgb(255,202,228)";
+            }
+
+            if(conversation[i]['destination'] == 'Südamerika'){
+                color = "rgb(150,147,178)";
+            }
+
+            if(conversation[i]['destination'] == 'Europa'){
+                color = "rgb(181,240,218)";
+            }
+
+            if(conversation[i]['destination'] == 'Australien'){
+                color = "rgb(255,184,136)";
+            }
+
+            if(conversation[i]['destination'] == 'Antarktis'){
+                color = "rgb(195,195,195)";
+            }
+        }
+
+    loadAllComments();
+}
+
+
+/**
+ * Function to add a Comment to post
+ */
+
+ function addComment(postIndex) {
+    let myComment = document.getElementById('comment' + postIndex).value;
+    conversations[postIndex].comments.push(myComment); 
+
+    localStorage.setItem('comment', myComment);
+    showMain(); 
+}
+
+
+/**
+ * Saving Comment into LocalStorage 
+ */
+ function loadAllComments() {
+    myComment = localStorage.getItem('comment');
+    document.getElementById('comments').innerHTML =+ `${conversationHTML}`;
 }
 
 
@@ -144,18 +168,23 @@ function showMain() {
 
 
 /**
- * Function to add a Comment to post
- */
+ * function for likes
 
- function addComment(postIndex) {
-    let myComment = document.getElementById('comment' + postIndex).value;
+function like(){
+    
+    let numberOfComments = 0;
 
-    conversation[postIndex].comments.push(myComment); 
+    for (let index = 0; index < conversation.length; index++) {
+        const like = conversation[index];
+    
+        for (let j = 0; j < like['comments'].length; j++) {
+            const element = like['comments'];
+            numberOfComments += 1; 
+        }
+    }
 
-    //savePosts();
-
-    showMain(); 
-}
+    document.getElementById('badge').innerText = numberOfComments;
+}*/
 
 
 /**
@@ -164,7 +193,6 @@ function showMain() {
 async function initMain(){
     await loadAllConversations();
     showMain();
-    Enter(); 
 }
 
 

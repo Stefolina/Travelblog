@@ -277,6 +277,21 @@ body {
     background-color: rgb(225, 238, 235);
 }
 
+.badge {
+    display: flex;
+    margin-right: 10px;
+    margin-left: -70px;
+    margin-top: -20px;
+    border-radius: 50%;
+    background: rgb(138, 138, 138); 
+    width: 15px;
+    height: 15px; 
+    color: white;
+    font-size: 13;
+    font-weight: bold;
+    justify-content: center; 
+}
+
 .line {
     width: 630px;
 }
