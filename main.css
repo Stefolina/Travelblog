@@ -56,11 +56,12 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
+    margin-bottom: 20px;
     border: 2px;
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
-    width: 115vh;
+    width: 125vh;
     height: 75vh;
     text-align: center;
     background-color: white;
@@ -194,7 +195,7 @@ body {
     border: 1px solid lightgray;
     padding: 5px;
     margin-bottom: 30px;
-    background-color: rgb(231, 240, 238);
+    background-color: rgb(235, 243, 241);
     overflow-y: auto;
 }
 

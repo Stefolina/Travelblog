@@ -8,6 +8,20 @@ body {
     display: flex;
 }
 
+a {
+    color: rgb(146,137,131);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+}
+
+a:hover {
+    color: rgb(115,221,205);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: line;
+}
+
 /*second section*/
 
 .impressum-section {
@@ -36,7 +50,7 @@ body {
     margin-top: 25px; 
     margin-bottom: 20px; 
     font-family: 'Special Elite', cursive;
-    color: rgb(170, 163, 157);
+    color: rgb(146,137,131);
 }
 
 .content-container {
@@ -47,8 +61,8 @@ body {
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
-    width: 115vh;
-    height: 60vh;
+    width: 140vh;
+    height: 70vh;
     background-color: white;
     overflow-y: auto;
     font-family: 'Montserrat', sans-serif !important;
@@ -65,4 +79,21 @@ body {
         opacity: 2;
         transform: translateY(0px);
     }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emptyrow {
+    margin-top: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.b{
+    font-family: 'Gochi Hand', cursive;
+    font-weight: lighter;
+    font-size: 25px;
 }

@@ -40,7 +40,7 @@ body {
 .header {
     font-family: 'Special Elite', cursive;
     justify-content: center;
-    color: rgb(170, 163, 157);
+    color: rgb(146,137,131);
 }
 
 .profil-pic-page {
@@ -59,8 +59,8 @@ body {
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
-    width: 115vh;
-    height: 60vh;
+    width: 140vh;
+    height: 70vh;
     text-align: center;
     background-color: white;
     overflow-y: auto;
@@ -92,7 +92,7 @@ body {
     color: white;
     height: 40px;
     width: 250px;
-    background-color: rgb(170, 163, 157);
+    background-color: rgb(146,137,131);
     cursor: pointer;
     transition: all ease-in-out 225ms;
 }
@@ -136,7 +136,7 @@ body {
 }
 
 .profil-btn {
-    background-color: rgb(170, 163, 157);
+    background-color: rgb(146,137,131);
     margin-top: 50px;
     padding: 15px;
     border: none;
@@ -162,8 +162,8 @@ body {
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;
     opacity: 0.9;
-    width: 115vh;
-    height: 60vh;
+    width: 140vh;
+    height: 70vh;
     text-align: center;
     background-color: white;
     overflow-y: auto;

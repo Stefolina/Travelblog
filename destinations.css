@@ -50,9 +50,9 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-bottom: 55px;
+    margin-bottom: 35px;
     font-family: 'Special Elite', cursive;
-    color: rgb(170, 163, 157);
+    color: rgb(146,137,131);
 }
 
 
@@ -62,7 +62,6 @@ body {
 .select-continents {
     display: flex; 
     justify-content: center; 
-    margin-top: 10px;
 }
 
 .continent-btn {
@@ -96,14 +95,13 @@ body {
 }
 
 .container-div {
-    width: 80%;
-    height: 500px;
+    width: 140vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     background-color: white;
     border-radius: 4px;
     padding-left: 10px;
-    margin-bottom: 50px;
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
     font-family: 'Montserrat', sans-serif !important;
@@ -193,7 +191,8 @@ body {
     display: flex;
     font-family: 'Montserrat';
     width: 60vh;
-    background-color: rgb(225, 238, 235);   
+    background-color: rgb(177, 177, 177); 
+    color: white;  
 }
 
 .line {

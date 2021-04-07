@@ -20,6 +20,8 @@
 function showAfrika() {
     let filteredConversation =  getConversationsByDestination('Afrika');
     
+        document.getElementById('continents').innerHTML = '';
+
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
@@ -57,11 +59,13 @@ function showAfrika() {
 
 function showAsien() {
     let filteredConversation =  getConversationsByDestination('Asien');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
+        document.getElementById('continents').innerHTML += `
             <div class="continent-post-d"> 
                 <div class="destination-d">${element['destination']}<br></div>
 
@@ -95,6 +99,8 @@ function showAsien() {
 
 function showNordamerika() {
     let filteredConversation =  getConversationsByDestination('Nordamerika');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
@@ -132,6 +138,8 @@ function showNordamerika() {
 
 function showSüdamerika() {
     let filteredConversation =  getConversationsByDestination('Südamerika');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
@@ -170,6 +178,8 @@ function showSüdamerika() {
 
 function showEuropa() {
     let filteredConversation =  getConversationsByDestination('Europa');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
@@ -208,6 +218,8 @@ function showEuropa() {
 
 function showAustralien() {
     let filteredConversation =  getConversationsByDestination('Australien');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
@@ -246,6 +258,8 @@ function showAustralien() {
 
 function showAntarktis() {
     let filteredConversation =  getConversationsByDestination('Antarktis');
+
+        document.getElementById('continents').innerHTML = '';
     
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];

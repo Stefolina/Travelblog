@@ -7,7 +7,7 @@
 .navigation {
     display: flex;
     flex-direction: column;
-    background-color: rgb(240, 233, 219);
+    background-color: rgb(228,208,184);
     height: 100vh;
     padding: 10px;
 }
