@@ -46,6 +46,27 @@ async function addPost() {
 
 
 /**
+ * Function to add a Comment to post
+ */
+ function addComment(postIndex) {
+    let myComment = document.getElementById('comment' + postIndex).value;
+    conversation[postIndex].comments.push(myComment); 
+    showMain(); 
+
+    localStorage.setItem('comment', myComment);
+}
+
+
+/**
+ * Load all Comments from Local Storage
+ */
+function loadAllComments() {
+    myComment = localStorage.getItem('comment');
+    document.getElementById('comments').innerHTML =+ `${commentsHTML}`;
+}
+
+
+/**
  * show update version of html
  */
 function showMain() {
@@ -85,13 +106,6 @@ function showMain() {
             color = "rgb(195,195,195)";
         }
 
-        let commentsHTML = '';
-
-        //for (let j = 0; j < comments.length; j++) {
-        //    const comment = comments[j];
-        //   commentsHTML += `<div>${comment}</div>`;
-        //}
-
         conversations.innerHTML += `
         <div id="post">
             <div class="post">
@@ -116,11 +130,11 @@ function showMain() {
                 <div class="comment-row">
                     <img src="icons/questionanswer.svg" class="comment-icons">
 
-                    <form onclick="Enter(); return false;">
+                    <div>
                         <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
 
-                        <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
-                    </form>
+                        <button class="button-comment" onclick="addComment(${i})">Post</button>
+                    </div>
 
                     <img src="icons/like.svg" class="comment-icons">
                 </div>
@@ -132,24 +146,14 @@ function showMain() {
         </div>
     `; 
     }
+
+    let commentsHTML = '';
+
+    for (let j = 0; j < comments.length; j++) {
+        const comment = comments[j];
+       commentsHTML += `<div>${comment}</div>`;
+    }
 }
-
-
-/**
- * Function to add a Comment to post
- */
- function addComment(postIndex) {
-    let myComment = document.getElementById('comment' + postIndex).value;
-    conversation[postIndex].comments.push(myComment); 
-    showMain(); 
-}
-
-/**
- * Function to push Enter for posting a comment
- 
- function Enter() {
-     
-}*/
 
 
 /**
