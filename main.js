@@ -49,115 +49,100 @@ async function addPost() {
  * show update version of html
  */
 function showMain() {
-    document.getElementById('myposts').innerHTML = '';  
+    let conversations = document.getElementById('myposts'); 
+
+    conversations.innerHTML = '';  
 
     for(let i = 0; i < conversation.length; i++) {
-        const conversations = conversation[i];
 
-        let conversationHTML = '';
+        let color = 'blue';
 
-            for (let j = 0; j < conversations.comments.length; j++) {
-                const comment = conversations.comments[j];
-                conversationHTML += `<div>${comment}</div>`;
-            }
-
-            document.getElementById('myposts').innerHTML += `
-            <div id="post">
-                <div class="post">
-                    <div class="destination" style="color: ${color};">
-                        <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-                        ${conversations[i]['destination']}<br>
-                    </div>
-
-                    <div class="date">${conversations[i]['date']}<br></div>
-
-                    <div class="user-area">
-                        <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-                        <div>User</div>
-                    </div>
-
-                    <div class="title"><b>${conversations[i]['title']}</b></div><br>
-
-                    <div class="question">${conversations[i]['question']}</div><br>
-
-                    <img src="icons/linecool.png" class="line">
-
-                    <div class="comment-row">
-                        <img src="icons/questionanswer.svg" class="comment-icons">
-
-                        <div>
-                            <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-
-                            <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
-                        </div>
-
-                        <img src="icons/like.svg" class="comment-icons">
-                        <div class="badge" id="badge"></div>
-                    </div>
-
-                    <div class="commentrow" id="comments">
-                        ${conversationHTML}
-                    </div>
-                </div>
-            </div>
-        `; 
-
-            let color = 'blue';
-
-            if(conversation[i]['destination'] == 'Afrika'){
-                color = "rgb(100,165,187)";
-            }
-                
-            if(conversation[i]['destination'] == 'Asien'){
-                color = "rgb(245,238,205)";
-            }
-
-            if(conversation[i]['destination'] == 'Nordamerika'){
-                color = "rgb(255,202,228)";
-            }
-
-            if(conversation[i]['destination'] == 'Südamerika'){
-                color = "rgb(150,147,178)";
-            }
-
-            if(conversation[i]['destination'] == 'Europa'){
-                color = "rgb(181,240,218)";
-            }
-
-            if(conversation[i]['destination'] == 'Australien'){
-                color = "rgb(255,184,136)";
-            }
-
-            if(conversation[i]['destination'] == 'Antarktis'){
-                color = "rgb(195,195,195)";
-            }
+        if(conversation[i]['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+            
+        if(conversation[i]['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
         }
 
-    loadAllComments();
+        if(conversation[i]['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+
+        if(conversation[i]['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+
+        if(conversation[i]['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+
+        if(conversation[i]['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+
+        if(conversation[i]['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+
+        let commentsHTML = '';
+
+        //for (let j = 0; j < comments.length; j++) {
+        //    const comment = comments[j];
+        //   commentsHTML += `<div>${comment}</div>`;
+        //}
+
+        conversations.innerHTML += `
+        <div id="post">
+            <div class="post">
+                <div class="destination" style="color: ${color};">
+                    <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+                    ${conversation[i]['destination']}<br>
+                </div>
+
+                <div class="date">${conversation[i]['date']}<br></div>
+
+                <div class="user-area">
+                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+                    <div>User</div>
+                </div>
+
+                <div class="title"><b>${conversation[i]['title']}</b></div><br>
+
+                <div class="question">${conversation[i]['question']}</div><br>
+
+                <img src="icons/linecool.png" class="line">
+
+                <div class="comment-row">
+                    <img src="icons/questionanswer.svg" class="comment-icons">
+
+                    <form onclick="Enter(); return false;">
+                        <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
+
+                        <button class="button-comment" onclick="addComment(${i})" type="submit">Post</button>
+                    </form>
+
+                    <img src="icons/like.svg" class="comment-icons">
+                </div>
+
+                <div class="commentrow" id="comments">
+                    ${commentsHTML}
+                </div>
+            </div>
+        </div>
+    `; 
+    }
 }
 
 
 /**
  * Function to add a Comment to post
  */
-
  function addComment(postIndex) {
     let myComment = document.getElementById('comment' + postIndex).value;
-    conversations[postIndex].comments.push(myComment); 
-
-    localStorage.setItem('comment', myComment);
+    conversation[postIndex].comments.push(myComment); 
     showMain(); 
 }
-
-
-/**
- * Saving Comment into LocalStorage 
- */
- function loadAllComments() {
-    myComment = localStorage.getItem('comment');
-    document.getElementById('comments').innerHTML =+ `${conversationHTML}`;
-}
-
 
 /**
  * Function to push Enter for posting a comment
@@ -168,23 +153,13 @@ function showMain() {
 
 
 /**
- * function for likes
-
-function like(){
-    
-    let numberOfComments = 0;
-
-    for (let index = 0; index < conversation.length; index++) {
-        const like = conversation[index];
-    
-        for (let j = 0; j < like['comments'].length; j++) {
-            const element = like['comments'];
-            numberOfComments += 1; 
-        }
-    }
-
-    document.getElementById('badge').innerText = numberOfComments;
-}*/
+ * Remove Question
+ */
+ async function deletePost(itemi) {
+    conversation.splice(itemi, 1);
+    await backend.setItem("conversation", JSON.stringify(conversation));
+    showMain();
+}
 
 
 /**
@@ -195,12 +170,3 @@ async function initMain(){
     showMain();
 }
 
-
-/**
- * Remove Question
- */
-async function deletePost(itemi) {
-    conversation.splice(itemi, 1);
-    await backend.setItem("conversation", JSON.stringify(conversation));
-    showMain();
-}
