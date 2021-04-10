@@ -144,7 +144,7 @@ function showSüdamerika() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
+        document.getElementById('continents').innerHTML += `
             <div class="continent-post-d"> 
                 <div class="destination-d">${element['destination']}<br></div>
 
@@ -161,9 +161,9 @@ function showSüdamerika() {
                 <div class="comment-row-d">
                         <img src="icons/questionanswer.svg" class="comment-icons-d">
 
-                        <form onclick="Enter(); return false;">
+                        <div>
                             <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
+                        </div>
 
                         <img src="icons/like.svg" class="comment-icons-d">
                 </div>

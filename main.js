@@ -1,4 +1,13 @@
 /**
+ * load all stuff from backend
+ */
+ async function initMain(){
+    await loadAllConversations();
+    showMain();
+}
+
+
+/**
  * Open Overlay to start a new conversation
  */
  function openOverlay() {
@@ -46,27 +55,6 @@ async function addPost() {
 
 
 /**
- * Function to add a Comment to post
- */
- function addComment(postIndex) {
-    let myComment = document.getElementById('comment' + postIndex).value;
-    conversation[postIndex].comments.push(myComment); 
-    showMain(); 
-
-    localStorage.setItem('comment', myComment);
-}
-
-
-/**
- * Load all Comments from Local Storage
- */
-function loadAllComments() {
-    myComment = localStorage.getItem('comment');
-    document.getElementById('comments').innerHTML =+ `${commentsHTML}`;
-}
-
-
-/**
  * show update version of html
  */
 function showMain() {
@@ -75,7 +63,7 @@ function showMain() {
     conversations.innerHTML = '';  
 
     for(let i = 0; i < conversation.length; i++) {
-
+        
         let color = 'blue';
 
         if(conversation[i]['destination'] == 'Afrika'){
@@ -104,6 +92,12 @@ function showMain() {
 
         if(conversation[i]['destination'] == 'Antarktis'){
             color = "rgb(195,195,195)";
+        }
+
+        let comments = conversation[i]['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
         }
 
         conversations.innerHTML += `
@@ -146,13 +140,26 @@ function showMain() {
         </div>
     `; 
     }
+}
 
-    let commentsHTML = '';
 
-    for (let j = 0; j < comments.length; j++) {
-        const comment = comments[j];
-       commentsHTML += `<div>${comment}</div>`;
-    }
+/**
+ * Function to add a Comment to post
+ */
+ function addComment(postIndex) {
+    let myComment = document.getElementById('comment' + postIndex).value;
+    conversation[postIndex].comments.push(myComment); 
+    showMain(); 
+
+    localStorage.setItem('comment', myComment);
+}
+
+
+/**
+ * Load all Comments from Local Storage
+ */
+function loadAllComments() {
+    myComment = localStorage.getItem('comment');
 }
 
 
@@ -164,13 +171,3 @@ function showMain() {
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
 }
-
-
-/**
- * load all stuff from backend
- */
-async function initMain(){
-    await loadAllConversations();
-    showMain();
-}
-
