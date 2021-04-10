@@ -99,13 +99,17 @@ body {
     height: 70vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
     border-radius: 4px;
     padding-left: 10px;
     box-shadow:rgb(240,232,228) 0px 1px 4px;
     box-shadow: 6px 6px 6px 5px rgb(0 0 0 / 20%);
     font-family: 'Montserrat', sans-serif !important;
-    margin-top: 20px;  
+    margin-top: 20px; 
+    background-image: url(img/world2.jpeg); 
+    background-position: center;
 }
 
 .h3-headings {
@@ -123,7 +127,6 @@ body {
     height: 250px;
     border: 1px solid lightgray;
     padding: 8px;
-    margin-bottom: 30px;
     background-color: white;
     opacity: 0.9;
     overflow-y: auto;

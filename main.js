@@ -27,26 +27,27 @@ function closeOverlay() {
  * add Post an save it into backend
  */
 async function addPost() {
+    let user = document.getElementById('user').value;
     let destination = document.getElementById('destination').value; 
     let date = document.getElementById('date').value;
     let title = document.getElementById('title').value; 
-    let question = document.getElementById('question').value; 
-    //let user = document.getElementById('user').value; 
+    let question = document.getElementById('question').value;  
 
     conversation.push({
+        "user": user,
         "id": new Date().getTime(),
         "destination": destination,
         "date": date,
         "title": title,
         "question": question,
         "comments": []
-        //"user": user
     });
 
     await backend.setItem('conversation', JSON.stringify(conversation));
 
     showMain();
 
+    document.getElementById('user').value = '';
     document.getElementById('destination').value = '';
     document.getElementById('date').value = '';
     document.getElementById('title').value = '';
@@ -112,7 +113,7 @@ function showMain() {
 
                 <div class="user-area">
                     <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-                    <div>User</div>
+                    <div>${conversation[i]['user']}</div>
                 </div>
 
                 <div class="title"><b>${conversation[i]['title']}</b></div><br>
@@ -127,14 +128,23 @@ function showMain() {
                     <div>
                         <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
 
-                        <button class="button-comment" onclick="addComment(${i})">Post</button>
+                        <button class="button-comment" onkeydown="enter()" onclick="addComment(${i})">Post</button>
                     </div>
 
                     <img src="icons/like.svg" class="comment-icons">
+                    <div class="badge id="bade">0</div>
                 </div>
 
                 <div class="commentrow" id="comments">
-                    ${commentsHTML}
+                    <div class="comment" id="mypostcomment">${commentsHTML}</div>
+                </div>
+
+                <div class="smileys">
+                    <button class="S-button" onclick="pushSmiley('🤔')">🤔</button>
+                    <button class="S-button" onclick="pushSmiley('😎')">😎</button>
+                    <button class="S-button" onclick="pushSmiley('😂')">😂</button>
+                    <button class="S-button" onclick="pushSmiley('😍')">😍</button>
+                    <button class="S-button" onclick="pushSmiley('😭')">😭</button>
                 </div>
             </div>
         </div>
@@ -156,6 +166,18 @@ function showMain() {
 
 
 /**
+ * Push Message with "Enter"
+ */
+ function enter() {
+    document.addEventListener("keydown", function (u) {
+        if (u.keyCode == 13) {  //checks whether the pressed key is "Enter"
+        addComment();
+    }
+    });
+}
+
+
+/**
  * Load all Comments from Local Storage
  */
 function loadAllComments() {
@@ -170,4 +192,13 @@ function loadAllComments() {
     conversation.splice(itemi, 1);
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
+}
+
+
+/**
+ * Push smiley into inputfield
+ */
+function pushSmiley(e) {
+    myPostComment = document.getElementById('mypostcomment');
+    myPostComment.value += e;
 }

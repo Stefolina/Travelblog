@@ -15,6 +15,40 @@
 
 
 /**
+ * Generating Post vor Continents
+ */
+function generatePost(element) {
+
+    return ` <div class="continent-post-d"> 
+        <div class="destination-d">${element['destination']}<br></div>
+        <div class="date-d">${element['date']}<br></div>
+        <div class="user-area">
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+            <div>${element['user']}</div>
+        </div>
+        <div class="title-d"><b>${element['title']}</b></div><br>
+        <div class="question-d">${element['question']}</div><br>
+        <img src="icons/linecool.png" class="line">
+        <div class="comment-row-d">
+                <img src="icons/questionanswer.svg" class="comment-icons-d">
+                <div>
+                    <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                </div>
+                <img src="icons/like.svg" class="comment-icons-d">
+        </div>
+                <div class="smileys">
+                    <button class="S-button" onclick="pushSmiley('🤔')">🤔</button>
+                    <button class="S-button" onclick="pushSmiley('😎')">😎</button>
+                    <button class="S-button" onclick="pushSmiley('😂')">😂</button>
+                    <button class="S-button" onclick="pushSmiley('😍')">😍</button>
+                    <button class="S-button" onclick="pushSmiley('😭')">😭</button>
+                </div>
+    </div>
+    `;
+}
+
+
+/**
  * Functions for selecting buttons with current continent 
  */
 function showAfrika() {
@@ -25,31 +59,7 @@ function showAfrika() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <form onclick="Enter(); return false;">
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/africa.jpeg')";
@@ -65,31 +75,7 @@ function showAsien() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML += `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <form onclick="Enter(); return false;">
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/asien.jpeg')";
@@ -105,31 +91,7 @@ function showNordamerika() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
-            <div class="continent-post-d"> 
-                    <div class="destination-d">${element['destination']}<br></div>
-
-                    <div class="date-d">${element['date']}<br></div>
-
-                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                    <div class="title-d"><b>${element['title']}</b></div><br>
-
-                    <div class="question-d">${element['question']}</div><br>
-
-                    <img src="icons/linecool.png" class="line">
-                    
-                    <div class="comment-row-d">
-                            <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                            <form onclick="Enter(); return false;">
-                                <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                            </form>
-
-                            <img src="icons/like.svg" class="comment-icons-d">
-                    </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/nordamerika.jpeg')";
@@ -144,31 +106,7 @@ function showSüdamerika() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML += `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <div>
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </div>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/südamerika.jpeg')";
@@ -184,31 +122,7 @@ function showEuropa() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <form onclick="Enter(); return false;">
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/europa.jpeg')";
@@ -224,31 +138,7 @@ function showAustralien() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <form onclick="Enter(); return false;">
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/australien.jpeg')";
@@ -264,31 +154,7 @@ function showAntarktis() {
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
         
-        document.getElementById('continents').innerHTML = `
-            <div class="continent-post-d"> 
-                <div class="destination-d">${element['destination']}<br></div>
-
-                <div class="date-d">${element['date']}<br></div>
-
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
-
-                <div class="title-d"><b>${element['title']}</b></div><br>
-
-                <div class="question-d">${element['question']}</div><br>
-
-                <img src="icons/linecool.png" class="line">
-                
-                <div class="comment-row-d">
-                        <img src="icons/questionanswer.svg" class="comment-icons-d">
-
-                        <form onclick="Enter(); return false;">
-                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
-                        </form>
-
-                        <img src="icons/like.svg" class="comment-icons-d">
-                </div>
-            </div>
-        `;
+        document.getElementById('continents').innerHTML += generatePost(element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
