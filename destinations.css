@@ -12,7 +12,7 @@ body {
 /*second section*/
 
 .second-section {
-    background-image: url(/img/world.jpeg);
+    background-image: url(img/world.jpeg);
     background-size: contain; 
     width: 100%;
     animation: 1s flyIn ease-out;

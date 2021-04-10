@@ -1,0 +1,83 @@
+function showMain() {
+    let conversations = document.getElementById('myposts'); 
+    conversations.innerHTML = '';  
+    for(let i = 0; i < conversation.length; i++) {
+        let color = 'blue';
+        if(conversation[i]['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(conversation[i]['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(conversation[i]['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(conversation[i]['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(conversation[i]['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(conversation[i]['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(conversation[i]['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = conversation[i]['comments'];
+        let commentHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        conversations.innerHTML += `
+        <div id="post">
+            <div class="post">
+                <div class="destination" style="color: ${color};">
+                    <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+                    ${conversation[i]['destination']}<br>
+                </div>
+                <div class="date">${conversation[i]['date']}<br></div>
+                <div class="user-area">
+                    <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+                    <div>User</div>
+                </div>
+                <div class="title"><b>${conversation[i]['title']}</b></div><br>
+                <div class="question">${conversation[i]['question']}</div><br>
+                <img src="icons/linecool.png" class="line">
+                <div class="comment-row">
+                    <img src="icons/questionanswer.svg" class="comment-icons">
+                    <div>
+                        <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
+                        <button class="button-comment" onclick="addComment(${i})">Post</button>
+                    </div>
+                    <img src="icons/like.svg" class="comment-icons">
+                </div>
+                <div class="commentrow" id="comments">
+                    ${commentsHTML}
+                </div>
+            </div>
+        </div>
+    `; 
+    }
+}
+
+Junus Ergin  17:49 Uhr
+@Stefanie Nader
+`
+        function generatePost(element) {
+            return ` <div class="continent-post-d"> 
+                <div class="destination-d">${element['destination']}<br></div>
+                <div class="date-d">${element['date']}<br></div>
+                <img src="icons/profilpic.svg" class="profilpic" id="profilpic"><br>
+                <div class="title-d"><b>${element['title']}</b></div><br>
+                <div class="question-d">${element['question']}</div><br>
+                <img src="icons/linecool.png" class="line">
+                <div class="comment-row-d">
+                        <img src="icons/questionanswer.svg" class="comment-icons-d">
+                        <form onclick="Enter(); return false;">
+                            <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                        </form>
+                        <img src="icons/like.svg" class="comment-icons-d">
+                </div>
+            </div>`;
+        }
