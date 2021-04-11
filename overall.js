@@ -6,6 +6,19 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
 
 
 /**
+ * Push Message with "Enter"
+ */
+ function init() {
+    document.addEventListener("keydown", function (u) {
+        if (u.keyCode == 13) {  //checks whether the pressed key is "Enter"
+        login();
+        addComment();
+    }
+    });
+}
+
+
+/**
  * Backend Functions
  */
 
@@ -20,6 +33,74 @@ let conversation = [];
     await downloadFromServer();
 
     conversation = jsonFromServer['conversation'] ? JSON.parse(jsonFromServer['conversation']) : [];
+}
+
+
+/**
+ * userinformations
+ */
+ let users = [
+    {
+        'id': 0,
+        'name': 'Marina',
+        'password': 'Marina123!',
+        'image': 'img/marina.jpg',
+        'e-mail': 'marina@web.de',
+    },
+    {
+        'id': 1,
+        'name': 'Yvonne',
+        'password': 'Yvonne123!',
+        'image': 'img/yvonne.jpg',
+        'e-mail': 'yvonne@web.de',
+    },
+    {
+        'id': 2,
+        'name': 'Steffi',
+        'password': 'Steffi123!',
+        'image': 'img/steffi.jfif',
+        'e-mail': 'steffi@web.de',
+    },
+    {
+        'id': 3,
+        'name': 'Junus',
+        'password': 'Junus123!',
+        'image': 'img/junus.jfif',
+        'e-mail': 'junus@web.de',
+    }
+];
+
+
+/**
+ * define currentUser from Local Storage
+ */
+ let currentUserFromLocalStorage = {};
+
+
+/**
+ * Checking current user for navigationbar
+ */
+ function checkCurrentUser() {
+    if (localStorage.getItem('currentUser')) { // Check if user exists
+        currentUserFromLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
+        document.getElementById('user-pic').src = currentUserFromLocalStorage.image;
+    }
+}
+
+
+/**
+ * to init important functions in body onload
+ */
+function initOverallApp() {
+    checkCurrentUser();
+}
+
+
+/**
+ * Logout current user
+ */
+function logout() {
+    localStorage.removeItem('currentUser');
 }
 
 

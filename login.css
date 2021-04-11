@@ -26,6 +26,58 @@ body {
     }
 }
 
+/*Overlay Loginmask*/
+
+.d-none {
+    display: none;
+}
+
+.overlay {
+    display: fixed;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(img/world.jpeg);
+    object-fit: cover;
+    background-size: cover; 
+}
+
+.login-header {
+    display: fixed;
+    padding-top: 100px;
+    font-size: 70;
+    text-shadow:
+     0 0 10px #FFFFFF,
+     0 0 20px #FFFFFF,
+     0 0 30px #FFFFFF,
+     0 0 40px rgb(143,218,208),
+     0 0 70px rgb(143,218,208),
+     0 0 80px rgb(143,218,208),
+     0 0 100px rgb(143,218,208)
+}
+
+.login-text {
+    display: fixed;
+    font-size: 50;
+    text-shadow:
+     0 0 10px #FFFFFF,
+     0 0 20px #FFFFFF,
+     0 0 30px #FFFFFF,
+     0 0 40px rgb(143,218,208),
+     0 0 70px rgb(143,218,208),
+     0 0 80px rgb(143,218,208),
+     0 0 100px rgb(143,218,208)
+}
+
+.check {
+    width: 70px;
+    height: 70px;
+}
+
+
 .header-div {
     display: flex;
     flex-direction: column;
@@ -55,8 +107,12 @@ body {
 }
 
 .profilpic {
+    display: flex;
     width: 70px;
     height: 70px;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-bottom: -20px;
 }
 
 .input-div {

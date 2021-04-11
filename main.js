@@ -128,11 +128,11 @@ function showMain() {
                     <div>
                         <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
 
-                        <button class="button-comment" onkeydown="enter()" onclick="addComment(${i})">Post</button>
+                        <button class="button-comment" onclick="addComment(${i})">Post</button>
                     </div>
 
-                    <img src="icons/like.svg" class="comment-icons">
-                    <div class="badge id="bade">0</div>
+                    <img onclick="like()" src="icons/like.svg" class="comment-icons">
+                    <div class="badge id="badge">0</div>
                 </div>
 
                 <div class="commentrow" id="comments">
@@ -140,7 +140,7 @@ function showMain() {
                 </div>
 
                 <div class="smileys">
-                    <button class="S-button" onclick="pushSmiley('🤔')">🤔</button>
+                    <button class="S-button" onclick="pushSmiley">🤔</button>
                     <button class="S-button" onclick="pushSmiley('😎')">😎</button>
                     <button class="S-button" onclick="pushSmiley('😂')">😂</button>
                     <button class="S-button" onclick="pushSmiley('😍')">😍</button>
@@ -150,6 +150,8 @@ function showMain() {
         </div>
     `; 
     }
+
+    myComment = JSON.parse(localStorage.getItem('users')) || [];
 }
 
 
@@ -160,28 +162,9 @@ function showMain() {
     let myComment = document.getElementById('comment' + postIndex).value;
     conversation[postIndex].comments.push(myComment); 
     showMain(); 
+    updateComments();
 
-    localStorage.setItem('comment', myComment);
-}
-
-
-/**
- * Push Message with "Enter"
- */
- function enter() {
-    document.addEventListener("keydown", function (u) {
-        if (u.keyCode == 13) {  //checks whether the pressed key is "Enter"
-        addComment();
-    }
-    });
-}
-
-
-/**
- * Load all Comments from Local Storage
- */
-function loadAllComments() {
-    myComment = localStorage.getItem('comment');
+    myComment = JSON.stringify(localStorage.setItem('comment')) || [];
 }
 
 
@@ -195,10 +178,52 @@ function loadAllComments() {
 }
 
 
+
+/**
+ * Loading the currently logged in user.
+ */
+
+ function loadCurrentUser() {
+    let currentUserAsString = localStorage.getItem("currentUser");
+
+    if (currentUserAsString) {
+        currentUser = JSON.parse(currentUserAsString);
+    }
+}
+
+
+/**
+ * Open current User Window
+ * @param { numer } userIndex - Index Number of current User
+ */
+
+ function loadCurrentUserWindow(userIndex) {
+    document.getElementById("user-pic").src=`${users[userIndex]['image']}`;
+}
+
+
 /**
  * Push smiley into inputfield
  */
 function pushSmiley(e) {
     myPostComment = document.getElementById('mypostcomment');
     myPostComment.value += e;
+}
+
+
+/**
+ * counting likes on badge
+ */
+function like() {
+    let numberOfComments = 0;
+
+    for (let index = 0; index < conversation.length; index++) {
+        const posti = conversation[index];
+    
+        for (let j = 0; j < posti['comments'].length; j++) {
+            const element = posti['comments'];
+            numberOfComments += 1; 
+        }
+    }
+    document.getElementById('badge').innerText = numberOfComments;
 }

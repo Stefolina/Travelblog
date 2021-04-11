@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 10px;
     line-height: 50px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -49,6 +49,41 @@
     width: 50px;
     height: 50px;
     display: flex;
-    margin-top: 70px;
-    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.pic-div {
+    display: flex;
+    justify-content: center;
+}
+
+.logout-btn {
+    display: flex;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(209, 236, 230);
+    cursor: pointer;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.loginlink {
+    text-decoration: none;
+    color: rgb(146,137,131);
+    cursor: pointer;
+    transition: all ease-in-out 225ms;
+}
+
+.loginlink:hover{
+    color: rgb(255,184,136);
+    font-weight: bolder;
+    font-size: 25px;
 }
