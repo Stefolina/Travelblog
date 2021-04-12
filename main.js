@@ -189,15 +189,7 @@ function showMain() {
     if (currentUserAsString) {
         currentUser = JSON.parse(currentUserAsString);
     }
-}
 
-
-/**
- * Open current User Window
- * @param { numer } userIndex - Index Number of current User
- */
-
- function loadCurrentUserWindow(userIndex) {
     document.getElementById("user-pic").src=`${users[userIndex]['image']}`;
 }
 
