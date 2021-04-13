@@ -19,10 +19,8 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
 
 
 /**
- * Backend Functions
+ * Definition for backend functions
  */
-
-/*Definition for backend functions*/
 let conversation = [];
 
 
@@ -72,31 +70,6 @@ let conversation = [];
 
 
 /**
- * define currentUser from Local Storage
- */
- let currentUserFromLocalStorage = {};
-
-
-/**
- * Checking current user for navigationbar
- */
- function checkCurrentUser() {
-    if (localStorage.getItem('currentUser')) { // Check if user exists
-        currentUserFromLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
-        document.getElementById('user-pic').src = currentUserFromLocalStorage.image;
-    }
-}
-
-
-/**
- * to init important functions in body onload
- */
-function initOverallApp() {
-    checkCurrentUser();
-}
-
-
-/**
  * Logout current user
  */
 function logout() {
@@ -135,36 +108,3 @@ function includeHTML() {
         }
     }
 }
-
-/*
-function coloredDestination() {
-    let color = 'blue';
-
-        if(conversation[i]['destination'] == 'Afrika'){
-            color = "rgb(100,165,187)";
-        }
-            
-        if(conversation[i]['destination'] == 'Asien'){
-            color = "rgb(245,238,205)";
-        }
-
-        if(conversation[i]['destination'] == 'Nordamerika'){
-            color = "rgb(255,202,228)";
-        }
-
-        if(conversation[i]['destination'] == 'Südamerika'){
-            color = "rgb(150,147,178)";
-        }
-
-        if(conversation[i]['destination'] == 'Europa'){
-            color = "rgb(181,240,218)";
-        }
-
-        if(conversation[i]['destination'] == 'Australien'){
-            color = "rgb(255,184,136)";
-        }
-
-        if(conversation[i]['destination'] == 'Antarktis'){
-            color = "rgb(195,195,195)";
-        }
-}*/

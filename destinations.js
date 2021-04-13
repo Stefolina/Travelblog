@@ -18,6 +18,8 @@
  * Generating Post vor Continents
  */
 function generatePost(element) {
+    let i;
+    let commentsHTML;
 
     return ` <div class="continent-post-d"> 
         <div class="destination-d">${element['destination']}<br></div>
@@ -29,20 +31,31 @@ function generatePost(element) {
         <div class="title-d"><b>${element['title']}</b></div><br>
         <div class="question-d">${element['question']}</div><br>
         <img src="icons/linecool.png" class="line">
-        <div class="comment-row-d">
-                <img src="icons/questionanswer.svg" class="comment-icons-d">
+        <div class="comment-row">
+                <img src="icons/questionanswer.svg" class="comment-icons">
+
                 <div>
-                    <input placeholder="Schreibe einen Kommentar" class="comment-input-d">
+                    <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
+
+                    <button class="button-comment" onclick="addComment(${i})">Post</button>
                 </div>
-                <img src="icons/like.svg" class="comment-icons-d">
+
+                <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
+                <div class="badge id="badge">0</div>
+            </div>
+
+            <div class="commentrow" id="comments">
+                <div class="comment" id="mypostcomment">${commentsHTML}</div>
+            </div>
+
+            <div class="smileys">
+                <button class="S-button" onclick="pushSmileys(0,'🤔')">🤔</button>
+                <button class="S-button" onclick="pushSmileys(1,'😎')">😎</button>
+                <button class="S-button" onclick="pushSmileys(2,'😂')">😂</button>
+                <button class="S-button" onclick="pushSmileys(3,'😍')">😍</button>
+                <button class="S-button" onclick="pushSmileys(4,'😭')">😭</button>
+            </div>
         </div>
-                <div class="smileys">
-                    <button class="S-button" onclick="pushSmiley('🤔')">🤔</button>
-                    <button class="S-button" onclick="pushSmiley('😎')">😎</button>
-                    <button class="S-button" onclick="pushSmiley('😂')">😂</button>
-                    <button class="S-button" onclick="pushSmiley('😍')">😍</button>
-                    <button class="S-button" onclick="pushSmiley('😭')">😭</button>
-                </div>
     </div>
     `;
 }
