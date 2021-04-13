@@ -40,8 +40,7 @@ async function addPost() {
         "date": date,
         "title": title,
         "question": question,
-        "comments": [],
-        "likes": []
+        "comments": []
     });
 
     await backend.setItem('conversation', JSON.stringify(conversation));
@@ -59,7 +58,7 @@ async function addPost() {
 /**
  * show update version of html
  */
-function showMain() {
+ function showMain() {
     let conversations = document.getElementById('myposts'); 
 
     conversations.innerHTML = '';  
@@ -126,7 +125,7 @@ function showMain() {
                 <img src="icons/questionanswer.svg" class="comment-icons">
 
                 <div>
-                    <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
+                    <textarea id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input"></textarea>
 
                     <button class="button-comment" onclick="addComment(${i})">Post</button>
                 </div>
@@ -140,11 +139,11 @@ function showMain() {
             </div>
 
             <div class="smileys">
-                <button class="S-button" onclick="pushSmileys(0,'🤔')">🤔</button>
-                <button class="S-button" onclick="pushSmileys(1,'😎')">😎</button>
-                <button class="S-button" onclick="pushSmileys(2,'😂')">😂</button>
-                <button class="S-button" onclick="pushSmileys(3,'😍')">😍</button>
-                <button class="S-button" onclick="pushSmileys(4,'😭')">😭</button>
+                    <button class="S-button" onclick="pushSmileys(0,'🤔')">🤔</button>
+                    <button class="S-button" onclick="pushSmileys(1,'😎')">😎</button>
+                    <button class="S-button" onclick="pushSmileys(2,'😂')">😂</button>
+                    <button class="S-button" onclick="pushSmileys(3,'😍')">😍</button>
+                    <button class="S-button" onclick="pushSmileys(4,'😭')">😭</button>
             </div>
         </div>
     </div>
@@ -167,7 +166,7 @@ function showMain() {
  * Function to add a Comment to post
  */
  function addComment(postIndex) {
-    let myComment = document.getElementById('comment' + postIndex).value;
+    let myComment = document.getElementById('myTextarea' + postIndex).value;
     conversation[postIndex].comments.push(myComment); 
     saveComments();
     showMain(); 
@@ -186,8 +185,8 @@ function saveComments(){
 /**
  * Push smiley into inputfield
  */
- function pushSmileys(g) {
-    let myPostComment = document.getElementById('comment${i}');
+ function pushSmileys(i,g) {
+    let myPostComment = document.getElementById(`comment${i}`);
     myPostComment.value += g;
 }
 
@@ -195,10 +194,14 @@ function saveComments(){
 /**
  * counting likes on badge
  */
-function like(i) {
-    let numberOfLikes = 0;
-    conversation[i]['likes'] ++;
-    document.getElementById('badge').innerText = numberOfLikes;
+function like() {
+    let numberOfLikes = document.getElementById('badge').innerText;
+    
+    document.addEventListener("onclick", function (u) {
+        if (u.onclick) {  //checks whether the pressed key is "Enter"
+        document.getElementById('badge').innerText = numberOfLikes + 1;
+    }
+    });
 }
 
 

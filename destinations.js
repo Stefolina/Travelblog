@@ -47,14 +47,6 @@ function generatePost(element) {
             <div class="commentrow" id="comments">
                 <div class="comment" id="mypostcomment">${commentsHTML}</div>
             </div>
-
-            <div class="smileys">
-                <button class="S-button" onclick="pushSmileys(0,'🤔')">🤔</button>
-                <button class="S-button" onclick="pushSmileys(1,'😎')">😎</button>
-                <button class="S-button" onclick="pushSmileys(2,'😂')">😂</button>
-                <button class="S-button" onclick="pushSmileys(3,'😍')">😍</button>
-                <button class="S-button" onclick="pushSmileys(4,'😭')">😭</button>
-            </div>
         </div>
     </div>
     `;
