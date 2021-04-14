@@ -291,4 +291,3 @@ function showAntarktis() {
     document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }
-

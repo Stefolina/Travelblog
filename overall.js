@@ -89,34 +89,19 @@ function generatePost(color, i, commentsHTML) {
     },
     {
         'id': 1,
-        'name': 'Yvonne',
-        'password': 'Yvonne123!',
-        'image': 'img/yvonne.jpg',
-        'e-mail': 'yvonne@web.de',
-    },
-    {
-        'id': 2,
         'name': 'Steffi',
         'password': 'Steffi123!',
         'image': 'img/steffi.jfif',
         'e-mail': 'steffi@web.de',
     },
     {
-        'id': 3,
+        'id': 2,
         'name': 'Junus',
         'password': 'Junus123!',
         'image': 'img/junus.jfif',
         'e-mail': 'junus@web.de',
     }
 ];
-
-
-/**
- * Logout current user
- */
-function logout() {
-    localStorage.removeItem('currentUser');
-}
 
 
 /**

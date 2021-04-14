@@ -116,13 +116,12 @@ async function addPost() {
 
 
 /**
- * Function to save all Conv
+ * Function to save all Comments
  */
 function saveComments(){
     let commentAsString = JSON.stringify(conversation);
     backend.setItem('conversation', commentAsString);
 }
-
 
 
 /**
@@ -140,19 +139,4 @@ function saveComments(){
  function like() {
     let badge = document.getElementById('badge');
     badge.innerText = +badge.innerText + 1;
-}
-
-
-/**
- * Loading the currently logged in user.
- */
-
- function loadCurrentUser() {
-    let currentUserAsString = localStorage.getItem("currentUser");
-
-    if (currentUserAsString) {
-        currentUser = JSON.parse(currentUserAsString);
-    }
-
-    document.getElementById("user-pic").src=`${users['image']}`;
 }

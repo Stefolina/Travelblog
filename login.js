@@ -29,46 +29,11 @@ function login(i) {
         document.getElementById('currentUserpic').src = users[0]['image'];
     }
 
-    if (document.getElementById('username').value == 'Yvonne') {
+    if (document.getElementById('username').value == 'Steffi') {
         document.getElementById('currentUserpic').src = users[1]['image'];
     }
 
-    if (document.getElementById('username').value == 'Steffi') {
-        document.getElementById('currentUserpic').src = users[2]['image'];
-    }
-
     if (document.getElementById('username').value == 'Junus') {
-        document.getElementById('currentUserpic').src = users[3]['image'];
-    }
-}
-
-
-/**
- * Saving the login data of the user that is currently logged in in the local storage.
- */
- function saveCurrentUserInLocalStorage() {
-    let currentUserAsString = JSON.stringify(currentUser);
-    localStorage.setItem("currentUser", currentUserAsString);
-}
-
-
-/**
- * Loading the data of all signed up users from the local storage and saves them in the users array when the page is loaded.
- *
- */
-async function loadAllUsers() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
-}
-
-
-/**
- * Loading the currently logged in user.
- */
-function loadCurrentUser() {
-    let currentUserAsString = localStorage.getItem("currentUser");
-
-    if (currentUserAsString) {
-        currentUserFromLocalStorage = JSON.parse(currentUserAsString);
+        document.getElementById('currentUserpic').src = users[2]['image'];
     }
 }
