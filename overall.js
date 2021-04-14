@@ -23,6 +23,48 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
  */
 let conversation = [];
 
+/**
+ * Postgenerator for main, destination and myQuestions
+ */
+function generatePost(color, i, commentsHTML) {
+    return `<div id="post">
+    <div class="post">
+        <div class="destination" style="color: ${color};">
+            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+            ${conversation[i]['destination']}<br>
+        </div>
+        <div class="date">${conversation[i]['date']}<br></div>
+        <div class="user-area">
+            <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
+            <div>${conversation[i]['user']}</div>
+        </div>
+        <div class="title"><b>${conversation[i]['title']}</b></div><br>
+        <div class="question">${conversation[i]['question']}</div><br>
+        <img src="icons/linecool.png" class="line">
+        <div class="comment-row">
+            <img src="icons/questionanswer.svg" class="comment-icons">
+            <div>
+                <textarea id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input"></textarea>
+                <button class="button-comment" onclick="addComment(${i})">Post</button>
+            </div>
+            <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
+            <div class="badge id="badge">0</div>
+        </div>
+        <div class="commentrow" id="comments">
+            <div class="comment" id="mypostcomment">${commentsHTML}</div>
+        </div>
+        <div class="smileys">
+                <button class="S-button" onclick="pushSmileys(${i},'🤔')">🤔</button>
+                <button class="S-button" onclick="pushSmileys(${i},'😎')">😎</button>
+                <button class="S-button" onclick="pushSmileys(${i},'😂')">😂</button>
+                <button class="S-button" onclick="pushSmileys(${i},'😍')">😍</button>
+                <button class="S-button" onclick="pushSmileys(${i},'😭')">😭</button>
+        </div>
+    </div>
+</div>
+`;
+}
+
 
 /**
  * async function for downloading data from backend to required pages

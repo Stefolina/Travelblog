@@ -277,6 +277,7 @@ body {
 
 .comment-icons:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .comment-input {

@@ -59,96 +59,38 @@ async function addPost() {
  * show update version of html
  */
  function showMain() {
-    let conversations = document.getElementById('myposts'); 
-
-    conversations.innerHTML = '';  
-
-    for(let i = 0; i < conversation.length; i++) {
-
-        let color = 'blue';
-
-        if(conversation[i]['destination'] == 'Afrika'){
-            color = "rgb(100,165,187)";
+        let conversations = document.getElementById('myposts'); 
+        conversations.innerHTML = '';  
+        for(let i = 0; i < conversation.length; i++) {
+            let color = 'blue';
+            if(conversation[i]['destination'] == 'Afrika'){
+                color = "rgb(100,165,187)";
+            }
+            if(conversation[i]['destination'] == 'Asien'){
+                color = "rgb(245,238,205)";
+            }
+            if(conversation[i]['destination'] == 'Nordamerika'){
+                color = "rgb(255,202,228)";
+            }
+            if(conversation[i]['destination'] == 'Südamerika'){
+                color = "rgb(150,147,178)";
+            }
+            if(conversation[i]['destination'] == 'Europa'){
+                color = "rgb(181,240,218)";
+            }
+            if(conversation[i]['destination'] == 'Australien'){
+                color = "rgb(255,184,136)";
+            }
+            if(conversation[i]['destination'] == 'Antarktis'){
+                color = "rgb(195,195,195)";
+            }
+            let comments = conversation[i]['comments'];
+            let commentsHTML = '';
+            for(let j=0; j<comments.length; j++){
+                commentsHTML += `<div>${comments[j]}</div>`;
+            }
+            conversations.innerHTML += generatePost(color, i, commentsHTML);
         }
-            
-        if(conversation[i]['destination'] == 'Asien'){
-            color = "rgb(245,238,205)";
-        }
-
-        if(conversation[i]['destination'] == 'Nordamerika'){
-            color = "rgb(255,202,228)";
-        }
-
-        if(conversation[i]['destination'] == 'Südamerika'){
-            color = "rgb(150,147,178)";
-        }
-
-        if(conversation[i]['destination'] == 'Europa'){
-            color = "rgb(181,240,218)";
-        }
-
-        if(conversation[i]['destination'] == 'Australien'){
-            color = "rgb(255,184,136)";
-        }
-
-        if(conversation[i]['destination'] == 'Antarktis'){
-            color = "rgb(195,195,195)";
-        }
-
-        let comments = conversation[i]['comments'];
-        let commentsHTML = '';
-        for(let j=0; j<comments.length; j++){
-            commentsHTML += `<div>${comments[j]}</div>`;
-        }
-
-        conversations.innerHTML += `<div id="post">
-        <div class="post">
-            <div class="destination" style="color: ${color};">
-                <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-                ${conversation[i]['destination']}<br>
-            </div>
-
-            <div class="date">${conversation[i]['date']}<br></div>
-
-            <div class="user-area">
-                <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-                <div>${conversation[i]['user']}</div>
-            </div>
-
-            <div class="title"><b>${conversation[i]['title']}</b></div><br>
-
-            <div class="question">${conversation[i]['question']}</div><br>
-
-            <img src="icons/linecool.png" class="line">
-
-            <div class="comment-row">
-                <img src="icons/questionanswer.svg" class="comment-icons">
-
-                <div>
-                    <textarea id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input"></textarea>
-
-                    <button class="button-comment" onclick="addComment(${i})">Post</button>
-                </div>
-
-                <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
-                <div class="badge id="badge">0</div>
-            </div>
-
-            <div class="commentrow" id="comments">
-                <div class="comment" id="mypostcomment">${commentsHTML}</div>
-            </div>
-
-            <div class="smileys">
-                    <button class="S-button" onclick="pushSmileys(0,'🤔')">🤔</button>
-                    <button class="S-button" onclick="pushSmileys(1,'😎')">😎</button>
-                    <button class="S-button" onclick="pushSmileys(2,'😂')">😂</button>
-                    <button class="S-button" onclick="pushSmileys(3,'😍')">😍</button>
-                    <button class="S-button" onclick="pushSmileys(4,'😭')">😭</button>
-            </div>
-        </div>
-    </div>
-    `;
-    }
 }
 
 
@@ -182,11 +124,12 @@ function saveComments(){
 }
 
 
+
 /**
  * Push smiley into inputfield
  */
  function pushSmileys(i,g) {
-    let myPostComment = document.getElementById(`comment${i}`);
+    let myPostComment = document.getElementById(`myTextarea${i}`);
     myPostComment.value += g;
 }
 
@@ -194,14 +137,9 @@ function saveComments(){
 /**
  * counting likes on badge
  */
-function like() {
-    let numberOfLikes = document.getElementById('badge').innerText;
-    
-    document.addEventListener("onclick", function (u) {
-        if (u.onclick) {  //checks whether the pressed key is "Enter"
-        document.getElementById('badge').innerText = numberOfLikes + 1;
-    }
-    });
+ function like() {
+    let badge = document.getElementById('badge');
+    badge.innerHTML = +badge.innerHTML + 1;
 }
 
 
@@ -216,5 +154,5 @@ function like() {
         currentUser = JSON.parse(currentUserAsString);
     }
 
-    document.getElementById("user-pic").src=`${users[userIndex]['image']}`;
+    document.getElementById("user-pic").src=`${users['image']}`;
 }

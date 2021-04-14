@@ -15,58 +15,42 @@
 
 
 /**
- * Generating Post vor Continents
- */
-function generatePost(element) {
-    let i;
-    let commentsHTML;
-
-    return ` <div class="continent-post-d"> 
-        <div class="destination-d">${element['destination']}<br></div>
-        <div class="date-d">${element['date']}<br></div>
-        <div class="user-area">
-            <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-            <div>${element['user']}</div>
-        </div>
-        <div class="title-d"><b>${element['title']}</b></div><br>
-        <div class="question-d">${element['question']}</div><br>
-        <img src="icons/linecool.png" class="line">
-        <div class="comment-row">
-                <img src="icons/questionanswer.svg" class="comment-icons">
-
-                <div>
-                    <input id="comment${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-
-                    <button class="button-comment" onclick="addComment(${i})">Post</button>
-                </div>
-
-                <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
-                <div class="badge id="badge">0</div>
-            </div>
-
-            <div class="commentrow" id="comments">
-                <div class="comment" id="mypostcomment">${commentsHTML}</div>
-            </div>
-        </div>
-    </div>
-    `;
-}
-
-
-/**
  * Functions for selecting buttons with current continent 
  */
-function showAfrika() {
+ function showAfrika() {
     let filteredConversation =  getConversationsByDestination('Afrika');
-    
         document.getElementById('continents').innerHTML = '';
-
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+          let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
-
     document.getElementById('continents').style.backgroundImage = "url('img/africa.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "top";
 }
@@ -74,13 +58,37 @@ function showAfrika() {
 
 function showAsien() {
     let filteredConversation =  getConversationsByDestination('Asien');
-
         document.getElementById('continents').innerHTML = '';
-    
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+          let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/asien.jpeg')";
@@ -90,13 +98,37 @@ function showAsien() {
 
 function showNordamerika() {
     let filteredConversation =  getConversationsByDestination('Nordamerika');
-
         document.getElementById('continents').innerHTML = '';
-    
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+          let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/nordamerika.jpeg')";
@@ -105,15 +137,39 @@ function showNordamerika() {
 
 function showSüdamerika() {
     let filteredConversation =  getConversationsByDestination('Südamerika');
-
         document.getElementById('continents').innerHTML = '';
-    
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+          let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
-
+    
     document.getElementById('continents').style.backgroundImage = "url('img/südamerika.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }
@@ -121,15 +177,38 @@ function showSüdamerika() {
 
 function showEuropa() {
     let filteredConversation =  getConversationsByDestination('Europa');
-
-        document.getElementById('continents').innerHTML = '';
-    
+    document.getElementById('continents').innerHTML = '';
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+        let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
-
     document.getElementById('continents').style.backgroundImage = "url('img/europa.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }
@@ -137,15 +216,38 @@ function showEuropa() {
 
 function showAustralien() {
     let filteredConversation =  getConversationsByDestination('Australien');
-
-        document.getElementById('continents').innerHTML = '';
-    
+    document.getElementById('continents').innerHTML = '';
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+        let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
-
     document.getElementById('continents').style.backgroundImage = "url('img/australien.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }
@@ -153,13 +255,37 @@ function showAustralien() {
 
 function showAntarktis() {
     let filteredConversation =  getConversationsByDestination('Antarktis');
-
-        document.getElementById('continents').innerHTML = '';
-    
+    document.getElementById('continents').innerHTML = '';
     for (let index = 0; index < filteredConversation.length; index++) {
         const element = filteredConversation[index];
-        
-        document.getElementById('continents').innerHTML += generatePost(element);
+        let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
