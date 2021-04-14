@@ -45,20 +45,6 @@ body {
     transform: scale(1.2);
 }
 
-.text-question {
-    font-size: 15px; 
-    font-weight: bold; 
-    margin-bottom: 15px; 
-    text-shadow:
-     0 0 10px #FFFFFF,
-     0 0 20px #FFFFFF,
-     0 0 30px #FFFFFF,
-     0 0 40px rgb(143,218,208),
-     0 0 70px rgb(143,218,208),
-     0 0 80px rgb(143,218,208),
-     0 0 100px rgb(143,218,208)
-}
-
 .myPost {
     display: flex;
     flex-direction: column;
@@ -346,8 +332,8 @@ body {
 }
 
 .button-comment { 
-    border: none; 
-    font-size: 15px; 
+    border: solid 1px black;
+    font-size: 13px;
     font-weight: bold; 
     cursor: pointer;
     background-color: rgb(231, 240, 238);
@@ -377,8 +363,289 @@ body {
     h2 {
         font-size: 20px;
     }
+}
 
+@media (max-width: 880px) {
+    .myPost {
+        width: 70vh;
+    }
+
+    .post {
+        width: 400px;
+    }
     
+    .question {
+        width: 350px;
+    }
+    
+    .comment-input {
+        width: 30vh;
+        margin-left: -25px;
+    }
 
+    .button-comment {
+        font-size: 10px;
+    }
 
+    .comment-icons {
+        margin-left: -15px;
+    }
+}
+
+@media (max-width: 730px) {
+    h2 {
+        font-size: 15px;
+    }
+
+    .myPost {
+        width: 60vh;
+    }
+}
+
+@media (max-width: 625px) {
+    .myPost {
+        width: 50vh;
+    }
+
+    .post {
+        width: 300px;
+        height: 350px;
+    }
+
+    .comment {
+        font-size: 12px;
+    }
+
+    .question {
+        width: 250px;
+    }
+
+    .comment-input {
+        width: 20vh;
+        margin-left: 0px;
+    }
+
+    .badge {
+        margin-left: -10px;
+    }
+
+    .comment-icons {
+        margin-left: 0px;
+    }
+
+    .line {
+        width: 300px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 590px) {
+    h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 515px) {
+    .myPost {
+        width: 45vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .myPost {
+        width: 40vh;
+    }
+
+    .post {
+        width: 250px;
+        height: 320px;
+    }
+
+    .destination {
+        font-size: 17px;
+    }
+
+    .question {
+        width: 225px;
+    }
+
+    .line {
+        width: 220px;
+    }
+
+    .comment-input {
+        width: 15vh;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 415px) {
+    .user-area {
+        font-size: 17px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .destination {
+        font-size: 15px;
+    }
+
+    .comment {
+        width: 200px;
+    }
+
+    .myPost {
+        width: 35vh;
+    }
+
+    .post {
+        width: 220px;
+        height: 340px;
+    }
+
+    .comment-row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .question {
+        width: 200px;
+    }
+}
+
+@media (max-width: 375px) {
+    .destination {
+        font-size: 13px;
+    }
+
+    .user-area {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 11px;
+    }
+
+    .question {
+        font-size: 12px;
+        width: 180px;
+    }
+
+    .comment-icons {
+        width: 15px;
+    }
+
+    .badge {
+        height: 10px;
+        width: 10px;
+        font-size: 7px;
+    }
+
+    .button-comment {
+        font-size: 8px;
+        width: 28px;
+    }
+
+    .post {
+        width: 200px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .myPost {
+        width: 32vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .img-question {
+        width: 60px;
+    }
+}
+
+@media (max-width: 335px) {
+    .myPost {
+        width: 30vh;
+    }
+
+    .post {
+        width: 180px;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .question {
+        font-size: 11px;
+        width: 160px;
+    }
+
+    .S-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .line {
+        width: 180px;
+    }
+}
+
+@media (max-width: 318px) {
+    .myPost {
+        width: 28vh;
+    }
+}
+
+@media (max-width: 305px) {
+    .myPost {
+        width: 25vh;
+    }
+
+    .profilpic {
+        width: 20px;
+    }
+
+    .date {
+        font-size: 8px;
+    }
+
+    .title {
+        font-size: 10px;
+    }
+
+    .question {
+        font-size: 10px;
+        width: 135px;
+    }
+
+    .comment {
+        width: 160px;
+        font-size: 10px;
+    }
+
+    .post {
+        width: 150px;
+        height: 280px;
+    }
+
+    .comment-input {
+        width: 12vh;
+        font-size: 9px;
+    }
+
+    .button-comment {
+        font-size: 8px;
+        width: 25px;
+        justify-content: center;
+        display: flex;
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+
+    .line {
+        width: 150px;
+    }
 }

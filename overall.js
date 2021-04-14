@@ -19,15 +19,10 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
 
 
 /**
- * Function for responsive Menu for all pages! (Never delete!!!!!!)
- */
- let show = false;
-
-
-/**
  * Definition for backend functions
  */
 let conversation = [];
+
 
 /**
  * Postgenerator for main, destination and myQuestions
@@ -83,34 +78,6 @@ function generatePost(color, i, commentsHTML) {
 
 
 /**
- * userinformations
- */
- let users = [
-    {
-        'id': 0,
-        'name': 'Marina',
-        'password': 'Marina123!',
-        'image': 'img/marina.jpg',
-        'e-mail': 'marina@web.de',
-    },
-    {
-        'id': 1,
-        'name': 'Steffi',
-        'password': 'Steffi123!',
-        'image': 'img/steffi.jfif',
-        'e-mail': 'steffi@web.de',
-    },
-    {
-        'id': 2,
-        'name': 'Junus',
-        'password': 'Junus123!',
-        'image': 'img/junus.jfif',
-        'e-mail': 'junus@web.de',
-    }
-];
-
-
-/**
  * template Integration function
  */
 
@@ -146,18 +113,12 @@ function includeHTML() {
 /**
  * Function to open and close the responsive Menu
  */
+function showMenu() {
+    document.getElementById('menu').classList.remove('d-none');
+    document.getElementById('menu').classList.add('responsive-menu');
+}
 
- function showMenu() {
-
-    if (show == false) {
-        document.getElementById('res-menu').classList.add('show-mobilemenu');
-
-        show = !show
-
-    }
-    else {
-        document.getElementById('res-menu').classList.remove('show-mobilemenu');
-
-        show = !show
-    }
+function closeMenu() {
+    document.getElementById('menu').classList.remove('responsive-menu');    
+    document.getElementById('menu').classList.add('d-none');     
 }

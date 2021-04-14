@@ -22,7 +22,6 @@
         <script src="./mini_backend.js"></script>
         <script src="overall.js"></script>
         <script src="main.js"></script>
-        <script src="login.js"></script>
     </head>
 
     <body onload="includeHTML(); initMain(); init()">
@@ -30,15 +29,11 @@
         <div class="main-section">
     
             <div w3-include-html="templates/menu.html"></div>
-            <div w3-include-html="templates/responsive-menu.html"></div>
+            <div w3-include-html="templates/mobilemenu.html"></div>
 
             <div class="post-section">
                     <h2>Stelle eine Frage indem du auf die Sprechblase drückst!</h2>
                     <img src="icons/conversation.svg" class="img-question" onclick="openOverlay()">
-                <div class="text-question">
-                    Stelle die Frage so oder <a class="loginlink" href="profil.html">registriere dich</a> und <a class="loginlink" href="login.html">logge dich</a> <br>
-                    anschließend ein. um Teil dieser Community zu werden!
-                </div>
 
                 <div class="myPost" id="myposts"></div>
             </div>
