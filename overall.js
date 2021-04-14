@@ -44,11 +44,11 @@ function generatePost(color, i, commentsHTML) {
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
-                <textarea id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input"></textarea>
+                <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
                 <button class="button-comment" onclick="addComment(${i})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
-            <div class="badge id="badge">0</div>
+            <div class="badge" id="badge">0</div>
         </div>
         <div class="commentrow" id="comments">
             <div class="comment" id="mypostcomment">${commentsHTML}</div>
@@ -134,4 +134,17 @@ function includeHTML() {
             return;
         }
     }
+}
+
+
+/**
+ * Function to open and close the responsive Menu
+ */
+
+ function showMenu() {
+    document.getElementById('menu').classList.add('show-overlay-menu');
+}
+
+function closeMenu() {
+    document.getElementById('menu').classList.remove('show-overlay-menu');
 }

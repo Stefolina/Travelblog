@@ -352,3 +352,33 @@ body {
     cursor: pointer;
     background-color: rgb(231, 240, 238);
 }
+
+/*for a nicer view*/
+@media (max-width: 1180px) {
+    .myPost {
+        width: 90vh;
+    }
+
+    .post {
+        width: 550px;
+    }
+
+    .comment-input {
+        width: 40vh;
+    }
+
+    .line {
+        width: 400px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 925px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    
+
+
+}

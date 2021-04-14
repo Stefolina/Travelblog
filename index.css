@@ -37,17 +37,15 @@ body {
 h1 {
     font-family: 'Special Elite', cursive;
     font-size: 60;
-    text-shadow:
-     0 0 10px #FFFFFF,
-     0 0 20px #FFFFFF,
-     0 0 30px #FFFFFF,
-     0 0 40px rgb(143,218,208),
-     0 0 70px rgb(143,218,208),
-     0 0 80px rgb(143,218,208),
-     0 0 100px rgb(143,218,208)
 }
 
 h2 {
     font-family: 'Syne Mono', monospace;
 }
 
+/*for mobiles and tablets*/
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40;
+    }
+}
