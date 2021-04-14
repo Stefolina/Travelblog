@@ -139,7 +139,7 @@ function saveComments(){
  */
  function like() {
     let badge = document.getElementById('badge');
-    badge.innerHTML = +badge.innerHTML + 1;
+    badge.innerText = +badge.innerText + 1;
 }
 
 
