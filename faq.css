@@ -76,7 +76,8 @@ body {
 .video {
     width: 900px;
     margin-left: 20px; 
-    margin-top: 5px; 
+    margin-bottom: 20px; 
+    margin-top: -10px; 
 }
 
 .pic-faq {
