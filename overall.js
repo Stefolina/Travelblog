@@ -19,6 +19,12 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
 
 
 /**
+ * Function for responsive Menu for all pages! (Never delete!!!!!!)
+ */
+ let show = false;
+
+
+/**
  * Definition for backend functions
  */
 let conversation = [];
@@ -142,9 +148,16 @@ function includeHTML() {
  */
 
  function showMenu() {
-    document.getElementById('menu').classList.add('show-overlay-menu');
-}
 
-function closeMenu() {
-    document.getElementById('menu').classList.remove('show-overlay-menu');
+    if (show == false) {
+        document.getElementById('res-menu').classList.add('show-mobilemenu');
+
+        show = !show
+
+    }
+    else {
+        document.getElementById('res-menu').classList.remove('show-mobilemenu');
+
+        show = !show
+    }
 }
