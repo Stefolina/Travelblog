@@ -97,3 +97,71 @@ a:hover {
     font-weight: lighter;
     font-size: 25px;
 }
+
+/*For tablets and smartphones*/
+@media (max-width: 1230px) {
+    .content-container {
+        width: 110vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content-container {
+        width: 90vh;
+    }
+}
+
+@media (max-width: 850px) {
+    .content-container {
+        width: 70vh;
+    }
+}
+
+@media (max-width: 710px) {
+    .content-container {
+        width: 50vh;
+        font-size: 12px;
+    }
+
+    .pic-impressum {
+        width: 40px;
+        height: 40px;
+    }
+
+    .headline {
+        font-size: 20px;
+    }
+
+    .b {
+        font-size: 20px; 
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        width: 35vh;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 365px) {
+    .content-container {
+        width: 25vh;
+        font-size: 9px;
+    }
+
+    .b {
+        font-size: 12px; 
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+}

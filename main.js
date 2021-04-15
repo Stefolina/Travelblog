@@ -136,7 +136,7 @@ function saveComments(){
 /**
  * counting likes on badge
  */
- function like() {
-    let badge = document.getElementById('badge');
+ function like(i) {
+    let badge = document.getElementById(`badge${i}`);
     badge.innerText = +badge.innerText + 1;
 }

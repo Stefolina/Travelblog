@@ -49,7 +49,7 @@ function generatePost(color, i, commentsHTML) {
                 <button class="button-comment" onclick="addComment(${i})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
-            <div class="badge" id="badge">0</div>
+            <div class="badge" id="badge${i}">0</div>
         </div>
         <div class="commentrow" id="comments">
             <div class="comment" id="mypostcomment">${commentsHTML}</div>

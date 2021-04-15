@@ -365,6 +365,12 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    .modal-content {
+        min-width: 350px;
+    }
+}
+
 @media (max-width: 880px) {
     .myPost {
         width: 70vh;
@@ -437,6 +443,11 @@ body {
         width: 300px;
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+
+    .comment-row {
+        margin-left: 0px; 
+        margin-right: 0px;
     }
 }
 
@@ -515,6 +526,28 @@ body {
     .question {
         width: 200px;
     }
+
+    .comment-icons {
+        width: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .modal-content {
+        min-width: 300px;
+    }
+
+    .input {
+        width: 200px;
+    }
+
+    .input-question {
+        width: 200px;
+    }
+
+    .input-destination {
+        width: 220px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -533,10 +566,6 @@ body {
     .question {
         font-size: 12px;
         width: 180px;
-    }
-
-    .comment-icons {
-        width: 15px;
     }
 
     .badge {
@@ -567,6 +596,24 @@ body {
     }
 }
 
+@media (max-width: 345px) {
+    .modal-content {
+        min-width: 220px;
+    }
+
+    .input {
+        width: 180px;
+    }
+
+    .input-question {
+        width: 180px;
+    }
+
+    .input-destination {
+        width: 200px;
+    }
+}
+
 @media (max-width: 335px) {
     .myPost {
         width: 30vh;
@@ -591,6 +638,10 @@ body {
     .line {
         width: 180px;
     }
+
+    .button-comment {
+        margin-left: 50px;
+    }
 }
 
 @media (max-width: 318px) {
@@ -601,7 +652,7 @@ body {
 
 @media (max-width: 305px) {
     .myPost {
-        width: 25vh;
+        width: 23vh;
     }
 
     .profilpic {
@@ -628,7 +679,7 @@ body {
 
     .post {
         width: 150px;
-        height: 280px;
+        height: 290px;
     }
 
     .comment-input {
@@ -647,5 +698,13 @@ body {
 
     .line {
         width: 150px;
+    }
+}
+
+@media (max-width: 290px) {
+    .post {
+        margin-top: -20px;
+        margin-left: -10px;
+        width: 145px;
     }
 }

@@ -205,3 +205,400 @@ body {
     width: 630px;
 }
   
+/*for tablets and smartphones*/
+@media (max-width: 1275px) {
+    .container-div {
+        width: 110vh;
+    }
+
+    .continent-btn {
+        width: 100px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .myPost {
+        width: 90vh;
+    }
+
+    .post {
+        width: 550px;
+    }
+
+    .comment-input {
+        width: 40vh;
+    }
+
+    .line {
+        width: 400px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 1030px) {
+    .container-div {
+        width: 90vh;
+    }
+}
+
+@media (max-width: 930px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .continent-btn {
+        width: 80px;
+        font-size: 12px;
+        height: 35px;
+        font-weight: bolder;
+    }
+
+    .header-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .h1-heading {
+        font-size: 20px;
+    }
+
+    .container-div {
+        width: 80vh;
+    }
+}
+
+@media (max-width: 880px) {
+    .container-div {
+        width: 70vh;
+    }
+
+    .post {
+        width: 400px;
+    }
+    
+    .question {
+        width: 350px;
+    }
+    
+    .comment-input {
+        width: 30vh;
+        margin-left: -25px;
+    }
+
+    .button-comment {
+        font-size: 10px;
+    }
+
+    .comment-icons {
+        margin-left: -15px;
+    }
+}
+
+@media (max-width: 790px) {
+    .select-continents {
+        flex-wrap: wrap;
+    }
+
+    .continent-btn {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 740px) {
+    h2 {
+        font-size: 15px;
+    }
+
+    .container-div {
+        width: 60vh;
+    }
+}
+
+@media (max-width: 660px) {
+    .title {
+        font-size: 14px;
+        margin-top: -5px;
+    }
+
+    .user-area {
+        font-size: 20px;
+    }
+
+    .container-div {
+        width: 55vh;
+    }
+
+    .post {
+        width: 370px;
+    }
+}
+
+@media (max-width: 625px) {
+    .container-div {
+        width: 50vh;
+    }
+
+    .post {
+        width: 300px;
+        height: 350px;
+    }
+
+    .comment {
+        font-size: 12px;
+    }
+
+    .question {
+        width: 250px;
+    }
+
+    .comment-input {
+        width: 20vh;
+        margin-left: 0px;
+    }
+
+    .badge {
+        margin-left: -10px;
+    }
+
+    .comment-icons {
+        margin-left: 0px;
+    }
+
+    .line {
+        width: 300px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .comment-row {
+        margin-left: 0px; 
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 590px) {
+    h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 515px) {
+    .container-div {
+        width: 45vh;
+    }
+}
+
+@media (max-width: 470px) {
+    .select-continents {
+        margin-top: -20px;
+        margin-bottom: -15px;
+    }
+
+    .continent-btn {
+        margin: 5px;
+        height: 20px;
+        width: 70px;
+        font-size: 10px;
+    }
+
+    .destination {
+        font-size: 17px;
+    }
+
+    .post {
+        height: 310px;
+    }
+}
+
+@media (max-width: 450px) {
+    .container-div {
+        width: 40vh;
+    }
+
+    .post {
+        width: 250px;
+        height: 320px;
+    }
+
+    .destination {
+        font-size: 17px;
+    }
+
+    .question {
+        width: 225px;
+    }
+
+    .line {
+        width: 220px;
+    }
+
+    .comment-input {
+        width: 15vh;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 415px) {
+    .user-area {
+        font-size: 17px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .destination {
+        font-size: 15px;
+    }
+
+    .comment {
+        width: 200px;
+    }
+
+    .container-div {
+        width: 35vh;
+    }
+
+    .post {
+        height: 310px;
+    }
+
+    .question {
+        width: 200px;
+    }
+
+    .comment-icons {
+        width: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .destination {
+        font-size: 13px;
+    }
+
+    .user-area {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 11px;
+    }
+
+    .question {
+        font-size: 12px;
+        width: 180px;
+    }
+
+    .badge {
+        height: 10px;
+        width: 10px;
+        font-size: 7px;
+    }
+
+    .button-comment {
+        font-size: 8px;
+        width: 28px;
+    }
+
+    .post {
+        width: 200px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .container-div {
+        width: 32vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .img-question {
+        width: 60px;
+    }
+}
+
+@media (max-width: 335px) {
+    .container-div {
+        width: 30vh;
+    }
+
+    .post {
+        width: 180px;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .question {
+        font-size: 11px;
+        width: 160px;
+    }
+
+    .S-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .line {
+        width: 180px;
+    }
+}
+
+@media (max-width: 318px) {
+    .container-div {
+        width: 28vh;
+    }
+}
+
+@media (max-width: 305px) {
+    .container-div {
+        width: 25vh;
+    }
+
+    .profilpic {
+        width: 20px;
+    }
+
+    .date {
+        font-size: 8px;
+    }
+
+    .title {
+        font-size: 10px;
+    }
+
+    .question {
+        font-size: 10px;
+        width: 135px;
+    }
+
+    .comment {
+        width: 160px;
+        font-size: 10px;
+    }
+
+    .post {
+        width: 150px;
+        height: 280px;
+    }
+
+    .comment-input {
+        width: 12vh;
+        font-size: 9px;
+    }
+
+    .button-comment {
+        font-size: 8px;
+        width: 25px;
+        justify-content: center;
+        display: flex;
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+
+    .line {
+        width: 150px;
+    }
+}
