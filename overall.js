@@ -27,20 +27,20 @@ let conversation = [];
 /**
  * Postgenerator for main, destination and myQuestions
  */
-function generatePost(color, i, commentsHTML) {
+function generatePost(color, i, commentsHTML, apfel) {
     return `<div id="post">
     <div class="post">
         <div class="destination" style="color: ${color};">
             <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-            ${conversation[i]['destination']}<br>
+            ${apfel['destination']}<br>
         </div>
-        <div class="date">${conversation[i]['date']}<br></div>
+        <div class="date">${apfel['date']}<br></div>
         <div class="user-area">
             <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-            <div>${conversation[i]['user']}</div>
+            <div>${apfel['user']}</div>
         </div>
-        <div class="title"><b>${conversation[i]['title']}</b></div><br>
-        <div class="question">${conversation[i]['question']}</div><br>
+        <div class="title"><b>${apfel['title']}</b></div><br>
+        <div class="question">${apfel['question']}</div><br>
         <img src="icons/linecool.png" class="line">
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">

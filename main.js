@@ -89,7 +89,7 @@ async function addPost() {
             for(let j=0; j<comments.length; j++){
                 commentsHTML += `<div>${comments[j]}</div>`;
             }
-            conversations.innerHTML += generatePost(color, i, commentsHTML);
+            conversations.innerHTML += generatePost(color, i, commentsHTML, conversation[i]);
         }
 }
 

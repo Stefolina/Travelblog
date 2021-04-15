@@ -49,7 +49,7 @@
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
     document.getElementById('continents').style.backgroundImage = "url('img/africa.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "top";
@@ -88,7 +88,7 @@ function showAsien() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/asien.jpeg')";
@@ -128,7 +128,7 @@ function showNordamerika() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/nordamerika.jpeg')";
@@ -167,7 +167,7 @@ function showSüdamerika() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
     
     document.getElementById('continents').style.backgroundImage = "url('img/südamerika.jpeg')";
@@ -207,7 +207,7 @@ function showEuropa() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
     document.getElementById('continents').style.backgroundImage = "url('img/europa.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
@@ -246,7 +246,7 @@ function showAustralien() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
     document.getElementById('continents').style.backgroundImage = "url('img/australien.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
@@ -285,7 +285,7 @@ function showAntarktis() {
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
-        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML);
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
