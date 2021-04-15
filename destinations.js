@@ -16,7 +16,7 @@
 
 /**
  * Functions for selecting buttons with current continent 
- */
+ 
  function showAfrika() {
     let filteredConversation =  getConversationsByDestination('Afrika');
         document.getElementById('continents').innerHTML = '';
@@ -289,5 +289,49 @@ function showAntarktis() {
     }
 
     document.getElementById('continents').style.backgroundImage = "url('img/antarktis.jpeg')";
+    document.getElementById('continents').style.backgroundPosition = "center";
+}
+*/
+
+/**
+ * Global function show Destinations 
+ */
+
+function showDestinations() {
+    let filteredConversationAfrika =  getConversationsByDestination('Afrika');
+    document.getElementById('continents').innerHTML = '';
+    for (let index = 0; index < filteredConversationAfrika.length; index++) {
+        const element = filteredConversationAfrika[index];
+        let color = 'blue';
+        if(element['destination'] == 'Afrika'){
+            color = "rgb(100,165,187)";
+        }
+        if(element['destination'] == 'Asien'){
+            color = "rgb(245,238,205)";
+        }
+        if(element['destination'] == 'Nordamerika'){
+            color = "rgb(255,202,228)";
+        }
+        if(element['destination'] == 'Südamerika'){
+            color = "rgb(150,147,178)";
+        }
+        if(element['destination'] == 'Europa'){
+            color = "rgb(181,240,218)";
+        }
+        if(element['destination'] == 'Australien'){
+            color = "rgb(255,184,136)";
+        }
+        if(element['destination'] == 'Antarktis'){
+            color = "rgb(195,195,195)";
+        }
+        let comments = element['comments'];
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+        document.getElementById('continents').innerHTML += generatePost(color, index, commentsHTML, element);
+    }
+
+    document.getElementById('continents').style.backgroundImage = "url('img/afrika.jpeg')";
     document.getElementById('continents').style.backgroundPosition = "center";
 }

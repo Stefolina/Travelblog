@@ -60,6 +60,7 @@ async function addPost() {
  */
  function showMain() {
         let conversations = document.getElementById('myposts'); 
+    if (conversations){
         conversations.innerHTML = '';  
         for(let i = 0; i < conversation.length; i++) {
             let color = 'blue';
@@ -91,6 +92,7 @@ async function addPost() {
             }
             conversations.innerHTML += generatePost(color, i, commentsHTML, conversation[i]);
         }
+    }
 }
 
 
@@ -101,17 +103,6 @@ async function addPost() {
     conversation.splice(itemi, 1);
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
-}
-
-
-/**
- * Function to add a Comment to post
- */
- function addComment(postIndex) {
-    let myComment = document.getElementById('myTextarea' + postIndex).value;
-    conversation[postIndex].comments.push(myComment); 
-    saveComments();
-    showMain(); 
 }
 
 

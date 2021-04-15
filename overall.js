@@ -28,7 +28,7 @@ let conversation = [];
  * Postgenerator for main, destination and myQuestions
  */
 function generatePost(color, i, commentsHTML, apfel) {
-    return `<div id="post">
+    return `<div id="post${i}">
     <div class="post">
         <div class="destination" style="color: ${color};">
             <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
@@ -52,7 +52,7 @@ function generatePost(color, i, commentsHTML, apfel) {
             <div class="badge" id="badge${i}">0</div>
         </div>
         <div class="commentrow" id="comments">
-            <div class="comment" id="mypostcomment">${commentsHTML}</div>
+            <div class="comment" id="mypostcomment${i}">${commentsHTML}</div>
         </div>
         <div class="smileys">
                 <button class="S-button" onclick="pushSmileys(${i},'🤔')">🤔</button>
@@ -64,6 +64,17 @@ function generatePost(color, i, commentsHTML, apfel) {
     </div>
 </div>
 `;
+}
+
+
+/**
+ * Function to add a Comment to post
+ */
+ function addComment(postIndex, i) {
+    let myComment = document.getElementById('myTextarea' + postIndex).value;
+    conversation[postIndex].comments.push(myComment); 
+    saveComments();
+    showMain(); 
 }
 
 
