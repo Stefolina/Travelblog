@@ -75,6 +75,7 @@ function generatePost(color, i, commentsHTML, apfel) {
     conversation[postIndex].comments.push(myComment); 
     saveComments();
     showMain(); 
+    showDestinations(Afrika);
 }
 
 

@@ -297,11 +297,11 @@ function showAntarktis() {
  * Global function show Destinations 
  */
 
-function showDestinations() {
-    let filteredConversationAfrika =  getConversationsByDestination('Afrika');
+ function showDestinations(Afrika) { // Hier Variable verwenden
+    let filteredConversations =  getConversationsByDestination(Afrika); // Hier eine Variable einsetzen
     document.getElementById('continents').innerHTML = '';
-    for (let index = 0; index < filteredConversationAfrika.length; index++) {
-        const element = filteredConversationAfrika[index];
+    for (let index = 0; index < filteredConversations.length; index++) {
+        const element = filteredConversations[index];
         let color = 'blue';
         if(element['destination'] == 'Afrika'){
             color = "rgb(100,165,187)";
