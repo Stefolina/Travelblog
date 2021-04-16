@@ -70,12 +70,12 @@ function generatePost(color, i, commentsHTML, apfel) {
 /**
  * Function to add a Comment to post
  */
- function addComment(postIndex, i) {
+ function addComment(postIndex, continent) {
     let myComment = document.getElementById('myTextarea' + postIndex).value;
     conversation[postIndex].comments.push(myComment); 
     saveComments();
     showMain(); 
-    showDestinations(Afrika);
+    showDestinations(continent);
 }
 
 
