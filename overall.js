@@ -70,9 +70,10 @@ function generatePost(color, i, commentsHTML, apfel) {
 /**
  * Function to add a Comment to post
  */
- function addComment(postIndex, continent) {
+ function addComment(postIndex, continent, destination) {
     let myComment = document.getElementById('myTextarea' + postIndex).value;
-    conversation[postIndex].comments.push(myComment); 
+    let filteredConversation = getConversationsByDestination(destination);
+    filteredConversation[postIndex].comments.push(myComment); 
     saveComments();
     showMain(); 
     showDestinations(continent);
