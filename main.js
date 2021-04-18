@@ -104,30 +104,3 @@ async function addPost() {
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
 }
-
-
-/**
- * Function to save all Comments
- */
-function saveComments(){
-    let commentAsString = JSON.stringify(conversation);
-    backend.setItem('conversation', commentAsString);
-}
-
-
-/**
- * Push smiley into inputfield
- */
- function pushSmileys(i,g) {
-    let myPostComment = document.getElementById(`myTextarea${i}`);
-    myPostComment.value += g;
-}
-
-
-/**
- * counting likes on badge
- */
- function like(i) {
-    let badge = document.getElementById(`badge${i}`);
-    badge.innerText = +badge.innerText + 1;
-}

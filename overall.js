@@ -27,7 +27,7 @@ let conversation = [];
 /**
  * Postgenerator for main, destination and myQuestions
  */
-function generatePost(color, i, commentsHTML, apfel) {
+function generatePost(color, i, commentsHTML, apfel, postIndex, continent, destination) {
     return `<div id="post${i}">
     <div class="post">
         <div class="destination" style="color: ${color};">
@@ -46,7 +46,7 @@ function generatePost(color, i, commentsHTML, apfel) {
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
                 <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${i})">Post</button>
+                <button class="button-comment" onclick="addComment(${postIndex,i,continent,destination})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
             <div class="badge" id="badge${i}">0</div>
@@ -70,13 +70,40 @@ function generatePost(color, i, commentsHTML, apfel) {
 /**
  * Function to add a Comment to post
  */
- function addComment(postIndex, continent, destination) {
-    let myComment = document.getElementById('myTextarea' + postIndex).value;
+ function addComment(postIndex, i, continent, destination) {
+    let myComment = document.getElementById(`myTextarea${i}` + postIndex).value;
     let filteredConversation = getConversationsByDestination(destination);
     filteredConversation[postIndex].comments.push(myComment); 
     saveComments();
     showMain(); 
     showDestinations(continent);
+}
+
+
+/**
+ * Function to save all Comments
+ */
+ function saveComments(){
+    let commentAsString = JSON.stringify(conversation);
+    backend.setItem('conversation', commentAsString);
+}
+
+
+/**
+ * Push smiley into inputfield
+ */
+ function pushSmileys(i,g) {
+    let myPostComment = document.getElementById(`myTextarea${i}`);
+    myPostComment.value += g;
+}
+
+
+/**
+ * counting likes on badge
+ */
+ function like(i) {
+    let badge = document.getElementById(`badge${i}`);
+    badge.innerText = +badge.innerText + 1;
 }
 
 
