@@ -46,7 +46,7 @@ function generatePost(color, i, commentsHTML, apfel, postIndex, continent, desti
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
                 <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${postIndex,i,continent,destination})">Post</button>
+                <button class="button-comment" onclick="addComment(${postIndex},${i},${continent},${destination})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
             <div class="badge" id="badge${i}">0</div>
