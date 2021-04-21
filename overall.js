@@ -46,7 +46,7 @@ function generatePost(color, i, commentsHTML, apfel, postIndex, continent, desti
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
                 <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${postIndex},${i},${continent},${destination})">Post</button>
+                <button class="button-comment" onclick="addComment(${postIndex,i,continent,destination})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
             <div class="badge" id="badge${i}">0</div>
@@ -71,7 +71,7 @@ function generatePost(color, i, commentsHTML, apfel, postIndex, continent, desti
  * Function to add a Comment to post
  */
  function addComment(postIndex, i, continent, destination) {
-    let myComment = document.getElementById(`myTextarea${i}` + postIndex).value;
+    let myComment = document.getElementById(`myTextarea${i}`).value;
     let filteredConversation = getConversationsByDestination(destination);
     filteredConversation[postIndex].comments.push(myComment); 
     saveComments();
