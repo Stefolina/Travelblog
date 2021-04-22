@@ -63,34 +63,9 @@ async function addPost() {
     if (conversations){
         conversations.innerHTML = '';  
         for(let i = 0; i < conversation.length; i++) {
-            let color = 'blue';
-            if(conversation[i]['destination'] == 'Afrika'){
-                color = "rgb(100,165,187)";
-            }
-            if(conversation[i]['destination'] == 'Asien'){
-                color = "rgb(245,238,205)";
-            }
-            if(conversation[i]['destination'] == 'Nordamerika'){
-                color = "rgb(255,202,228)";
-            }
-            if(conversation[i]['destination'] == 'Südamerika'){
-                color = "rgb(150,147,178)";
-            }
-            if(conversation[i]['destination'] == 'Europa'){
-                color = "rgb(181,240,218)";
-            }
-            if(conversation[i]['destination'] == 'Australien'){
-                color = "rgb(255,184,136)";
-            }
-            if(conversation[i]['destination'] == 'Antarktis'){
-                color = "rgb(195,195,195)";
-            }
-            let comments = conversation[i]['comments'];
-            let commentsHTML = '';
-            for(let j=0; j<comments.length; j++){
-                commentsHTML += `<div>${comments[j]}</div>`;
-            }
-            conversations.innerHTML += generatePost(color, i, commentsHTML, conversation[i]);
+            let color = getColorForDestination(conversation['destination']);
+
+            conversations.innerHTML += generatePost(color, i, conversation[i]);
         }
     }
 }
@@ -98,9 +73,10 @@ async function addPost() {
 
 /**
  * Remove Question
+ * @param item - selected post which you want to delete
  */
- async function deletePost(itemi) {
-    conversation.splice(itemi, 1);
+ async function deletePost(item) {
+    conversation.splice(item, 1);
     await backend.setItem("conversation", JSON.stringify(conversation));
     showMain();
 }

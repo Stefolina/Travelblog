@@ -26,8 +26,12 @@ let conversation = [];
 
 /**
  * Postgenerator for main, destination and myQuestions
+ * @param color - color for selected continent
+ * @param i - Textarea, comment, smiley or like for current post
+ * @param post - synonym for conversation[i]
  */
-function generatePost(color, i, commentsHTML, post) {
+function generatePost(color, i, post) {
+    let commentsHTML = generateCommentsHTML(post['comments']);
 
     return `<div id="post${i}">
     <div class="post">
@@ -47,7 +51,7 @@ function generatePost(color, i, commentsHTML, post) {
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
                 <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${i})">Post</button>
+                <button class="button-comment" onclick="addComment(${i}, ${destination})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
             <div class="badge" id="badge${i}">0</div>
@@ -69,12 +73,60 @@ function generatePost(color, i, commentsHTML, post) {
 
 
 /**
+ * colordefinition for mainpage
+ * @param {string} destination "Afrika"
+ * @returns {string} color e.g. "rgb(150,147,178)"
+ */
+ function getColorForDestination(destination){
+    let color = 'blue';
+            if(destination == 'Afrika'){
+                color = "rgb(100,165,187)";
+            }
+            if(destination == 'Asien'){
+                color = "rgb(245,238,205)";
+            }
+            if(destination == 'Nordamerika'){
+                color = "rgb(255,202,228)";
+            }
+            if(destination == 'Südamerika'){
+                color = "rgb(150,147,178)";
+            }
+            if(destination == 'Europa'){
+                color = "rgb(181,240,218)";
+            }
+            if(destination == 'Australien'){
+                color = "rgb(255,184,136)";
+            }
+            if(destination == 'Antarktis'){
+                color = "rgb(195,195,195)";
+            }
+
+        return color;
+}
+
+
+/**
+ * Showing commentsHTML for destinations and main page
+ * @param {array>strings} comments -comments of a conversation object
+ * @returns HTML Code of comments
+ */
+function generateCommentsHTML(comments){
+        let commentsHTML = '';
+        for(let j=0; j<comments.length; j++){
+            commentsHTML += `<div>${comments[j]}</div>`;
+        }
+
+    return commentsHTML;
+}
+
+
+/**
  * Function to add a Comment to post
+ * @param i - created comment in current post
  */
  function addComment(i) {
     let myComment = document.getElementById(`myTextarea${i}`).value;
-    /*let filteredConversation = getConversationsByDestination(destination);*/
-    conversation[i].comments.push(myComment); 
+    let filteredConversation = getConversationsByDestination(destination);
     filteredConversation[i].comments.push(myComment); 
     saveComments();
     showMain(); 
@@ -93,6 +145,8 @@ function generatePost(color, i, commentsHTML, post) {
 
 /**
  * Push smiley into inputfield
+ * @param i - current Textarea 
+ * @param g - selected emoji for current textarea
  */
  function pushSmileys(i,g) {
     let myPostComment = document.getElementById(`myTextarea${i}`);
@@ -102,6 +156,7 @@ function generatePost(color, i, commentsHTML, post) {
 
 /**
  * counting likes on badge
+ * @param i -current badge in selected post
  */
  function like(i) {
     let badge = document.getElementById(`badge${i}`);
