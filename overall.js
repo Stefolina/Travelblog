@@ -27,26 +27,27 @@ let conversation = [];
 /**
  * Postgenerator for main, destination and myQuestions
  */
-function generatePost(color, i, commentsHTML, apfel, postIndex, continent, destination) {
+function generatePost(color, i, commentsHTML, post) {
+
     return `<div id="post${i}">
     <div class="post">
         <div class="destination" style="color: ${color};">
             <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
-            ${apfel['destination']}<br>
+            ${post['destination']}<br>
         </div>
-        <div class="date">${apfel['date']}<br></div>
+        <div class="date">${post['date']}<br></div>
         <div class="user-area">
             <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-            <div>${apfel['user']}</div>
+            <div>${post['user']}</div>
         </div>
-        <div class="title"><b>${apfel['title']}</b></div><br>
-        <div class="question">${apfel['question']}</div><br>
+        <div class="title"><b>${post['title']}</b></div><br>
+        <div class="question">${post['question']}</div><br>
         <img src="icons/linecool.png" class="line">
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
                 <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${postIndex},${i},${continent},${destination})">Post</button>
+                <button class="button-comment" onclick="addComment(${i})">Post</button>
             </div>
             <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
             <div class="badge" id="badge${i}">0</div>
@@ -70,10 +71,11 @@ function generatePost(color, i, commentsHTML, apfel, postIndex, continent, desti
 /**
  * Function to add a Comment to post
  */
- function addComment(i,destination, continent) {
+ function addComment(i) {
     let myComment = document.getElementById(`myTextarea${i}`).value;
-    let filteredConversation = getConversationsByDestination(destination);
-    filteredConversation.comments.push(myComment); 
+    /*let filteredConversation = getConversationsByDestination(destination);*/
+    conversation[i].comments.push(myComment); 
+    filteredConversation[i].comments.push(myComment); 
     saveComments();
     showMain(); 
     showDestinations(continent);

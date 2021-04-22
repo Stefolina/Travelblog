@@ -18,7 +18,7 @@
  * Global function show Destinations 
  */
 
- function showDestinations(continent) { // Hier Variable verwenden
+function showDestinations(continent) { // Hier Variable verwenden
     let filteredConversations =  getConversationsByDestination(continent); // Hier eine Variable einsetzen
     document.getElementById('continents').innerHTML = '';
     for (let index = 0; index < filteredConversations.length; index++) {
