@@ -26,17 +26,16 @@ let conversation = [];
 
 /**
  * Postgenerator for main, destination and myQuestions
- * @param color - color for selected continent
- * @param i - Textarea, comment, smiley or like for current post
  * @param post - synonym for conversation[i]
  */
-function generatePost(color, i, post) {
-    let commentsHTML = generateCommentsHTML(post['comments']);
+function generatePost(post) {
+    let commentsHTML = generateCommentsHTML(conversation['comments']);
+    let color = getColorForDestination(color['destination']);
 
-    return `<div id="post${i}">
+    return `<div id="post${post['id']}">
     <div class="post">
         <div class="destination" style="color: ${color};">
-            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${i})">
+            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${post['id']})">
             ${post['destination']}<br>
         </div>
         <div class="date">${post['date']}<br></div>
@@ -50,21 +49,21 @@ function generatePost(color, i, post) {
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
-                <input id="myTextarea${i}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${i}, ${destination})">Post</button>
+                <input id="myTextarea${post['id']}" placeholder="Schreibe einen Kommentar" class="comment-input">
+                <button class="button-comment" onclick="addComment(${post['id']})">Post</button>
             </div>
-            <img onclick="like(${i})" src="icons/like.svg" class="comment-icons" id="like-btn">
-            <div class="badge" id="badge${i}">0</div>
+            <img onclick="like(${post['id']})" src="icons/like.svg" class="comment-icons" id="like-btn">
+            <div class="badge" id="badge${post['id']}">0</div>
         </div>
         <div class="commentrow" id="comments">
-            <div class="comment" id="mypostcomment${i}">${commentsHTML}</div>
+            <div class="comment" id="mypostcomment${post['id']}">${commentsHTML}</div>
         </div>
         <div class="smileys">
-                <button class="S-button" onclick="pushSmileys(${i},'🤔')">🤔</button>
-                <button class="S-button" onclick="pushSmileys(${i},'😎')">😎</button>
-                <button class="S-button" onclick="pushSmileys(${i},'😂')">😂</button>
-                <button class="S-button" onclick="pushSmileys(${i},'😍')">😍</button>
-                <button class="S-button" onclick="pushSmileys(${i},'😭')">😭</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'🤔')">🤔</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😎')">😎</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😂')">😂</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😍')">😍</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😭')">😭</button>
         </div>
     </div>
 </div>
@@ -122,12 +121,12 @@ function generateCommentsHTML(comments){
 
 /**
  * Function to add a Comment to post
- * @param i - created comment in current post
+ * @param id {number} e.g. 1618589389873
  */
- function addComment(i) {
-    let myComment = document.getElementById(`myTextarea${i}`).value;
-    let filteredConversation = getConversationsByDestination(destination);
-    filteredConversation[i].comments.push(myComment); 
+ function addComment(id) {
+    let myComment = document.getElementById(`myTextarea${id}`).value;
+    let myConversation = conversation.find(c => c.id ==id);
+    myConversation.comments.push(myComment);
     saveComments();
     showMain(); 
     showDestinations(continent);
@@ -149,7 +148,7 @@ function generateCommentsHTML(comments){
  * @param g - selected emoji for current textarea
  */
  function pushSmileys(i,g) {
-    let myPostComment = document.getElementById(`myTextarea${i}`);
+    let myPostComment = document.getElementById(`myTextarea${post['id']}`);
     myPostComment.value += g;
 }
 
@@ -159,7 +158,7 @@ function generateCommentsHTML(comments){
  * @param i -current badge in selected post
  */
  function like(i) {
-    let badge = document.getElementById(`badge${i}`);
+    let badge = document.getElementById(`badge${post['id']}`);
     badge.innerText = +badge.innerText + 1;
 }
 
