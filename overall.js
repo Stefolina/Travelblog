@@ -28,42 +28,42 @@ let conversation = [];
  * Postgenerator for main, destination and myQuestions
  * @param post - synonym for conversation[i]
  */
-function generatePost(post) {
+function generatePost() {
     let commentsHTML = generateCommentsHTML(conversation['comments']);
     let color = getColorForDestination(color['destination']);
 
-    return `<div id="post${post['id']}">
+    return `<div id="post${conversation['id']}">
     <div class="post">
         <div class="destination" style="color: ${color};">
-            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${post['id']})">
-            ${post['destination']}<br>
+            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${conversation['id']})">
+            ${conversation['destination']}<br>
         </div>
-        <div class="date">${post['date']}<br></div>
+        <div class="date">${conversation['date']}<br></div>
         <div class="user-area">
             <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-            <div>${post['user']}</div>
+            <div>${conversation['user']}</div>
         </div>
-        <div class="title"><b>${post['title']}</b></div><br>
-        <div class="question">${post['question']}</div><br>
+        <div class="title"><b>${conversation['title']}</b></div><br>
+        <div class="question">${conversation['question']}</div><br>
         <img src="icons/linecool.png" class="line">
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
-                <input id="myTextarea${post['id']}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${post['id']})">Post</button>
+                <input id="myTextarea${conversation['id']}" placeholder="Schreibe einen Kommentar" class="comment-input">
+                <button class="button-comment" onclick="addComment(${conversation['id']})">Post</button>
             </div>
-            <img onclick="like(${post['id']})" src="icons/like.svg" class="comment-icons" id="like-btn">
-            <div class="badge" id="badge${post['id']}">0</div>
+            <img onclick="like(${conversation['id']})" src="icons/like.svg" class="comment-icons" id="like-btn">
+            <div class="badge" id="badge${conversation['id']}">0</div>
         </div>
         <div class="commentrow" id="comments">
-            <div class="comment" id="mypostcomment${post['id']}">${commentsHTML}</div>
+            <div class="comment" id="mypostcomment${conversation['id']}">${commentsHTML}</div>
         </div>
         <div class="smileys">
-                <button class="S-button" onclick="pushSmileys(${post['id']},'🤔')">🤔</button>
-                <button class="S-button" onclick="pushSmileys(${post['id']},'😎')">😎</button>
-                <button class="S-button" onclick="pushSmileys(${post['id']},'😂')">😂</button>
-                <button class="S-button" onclick="pushSmileys(${post['id']},'😍')">😍</button>
-                <button class="S-button" onclick="pushSmileys(${post['id']},'😭')">😭</button>
+                <button class="S-button" onclick="pushSmileys(${conversation['id']},'🤔')">🤔</button>
+                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😎')">😎</button>
+                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😂')">😂</button>
+                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😍')">😍</button>
+                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😭')">😭</button>
         </div>
     </div>
 </div>
@@ -109,8 +109,9 @@ function generatePost(post) {
  * @param {array>strings} comments -comments of a conversation object
  * @returns HTML Code of comments
  */
-function generateCommentsHTML(comments){
+function generateCommentsHTML(){
         let commentsHTML = '';
+        let comments = conversation['comments'];
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }

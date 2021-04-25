@@ -58,12 +58,12 @@ async function addPost() {
 /**
  * show update version of html
  */
- function showMain(post) {
+ function showMain() {
         let conversations = document.getElementById('myposts'); 
     if (conversations){
         conversations.innerHTML = '';  
         for(let i = 0; i < conversation.length; i++) {
-            conversations.innerHTML += generatePost(post);
+            conversations.innerHTML += generatePost();
         }
     }
 }
