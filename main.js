@@ -43,7 +43,7 @@ async function addPost() {
         "comments": []
     });
 
-    await backend.setItem('conversation', JSON.stringify(conversations));
+    await backend.setItem('conversations', JSON.stringify(conversations));
 
     showMain();
 
@@ -58,12 +58,12 @@ async function addPost() {
 /**
  * show update version of html
  */
- function showMain() {
+ function showMain(post) {
         let conversationArea = document.getElementById('myposts'); 
     if (conversationArea){
         conversationArea.innerHTML = '';  
         for(let i = 0; i < conversations.length; i++) {
-            conversationArea.innerHTML += generatePost();
+            conversationArea.innerHTML += generatePost(post);
         }
     }
 }
