@@ -33,7 +33,7 @@ async function addPost() {
     let title = document.getElementById('title').value; 
     let question = document.getElementById('question').value;  
 
-    conversation.push({
+    conversations.push({
         "user": user,
         "id": new Date().getTime(),
         "destination": destination,
@@ -43,7 +43,7 @@ async function addPost() {
         "comments": []
     });
 
-    await backend.setItem('conversation', JSON.stringify(conversation));
+    await backend.setItem('conversation', JSON.stringify(conversations));
 
     showMain();
 
@@ -59,11 +59,11 @@ async function addPost() {
  * show update version of html
  */
  function showMain() {
-        let conversations = document.getElementById('myposts'); 
-    if (conversations){
-        conversations.innerHTML = '';  
-        for(let i = 0; i < conversation.length; i++) {
-            conversations.innerHTML += generatePost();
+        let conversationArea = document.getElementById('myposts'); 
+    if (conversationArea){
+        conversationArea.innerHTML = '';  
+        for(let i = 0; i < conversations.length; i++) {
+            conversationArea.innerHTML += generatePost();
         }
     }
 }
@@ -74,7 +74,7 @@ async function addPost() {
  * @param item - selected post which you want to delete
  */
  async function deletePost(item) {
-    conversation.splice(item, 1);
-    await backend.setItem("conversation", JSON.stringify(conversation));
+    conversations.splice(item, 1);
+    await backend.setItem("conversations", JSON.stringify(conversations));
     showMain();
 }

@@ -10,7 +10,7 @@
  * Function to Filter destination
  */
  function getConversationsByDestination(destination) {
-    return conversation.filter(c => c ['destination'] == destination);
+    return conversations.filter(c => c ['destination'] == destination);
 }
 
 
@@ -25,7 +25,7 @@ function showDestinations(continent) { // Hier Variable verwenden
         for (let index = 0; index < filteredConversations.length; index++) {
             const element = filteredConversations[index];
 
-            let color = getColorForDestination(conversation['destination']);
+            let color = getColorForDestination(conversations['destination']);
         
             document.getElementById('continents').innerHTML += generatePost(color, index, element);
 

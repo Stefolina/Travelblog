@@ -21,49 +21,49 @@ setURL('http://stefanie-nader.developerakademie.com/smallest_backend_ever-master
 /**
  * Definition for backend functions
  */
-let conversation = [];
+let conversations = [];
 
 
 /**
  * Postgenerator for main, destination and myQuestions
  * @param post - synonym for conversation[i]
  */
-function generatePost() {
-    let commentsHTML = generateCommentsHTML(conversation['comments']);
+function generatePost(post) {
+    let commentsHTML = generateCommentsHTML(post['comments']);
     let color = getColorForDestination(color['destination']);
 
-    return `<div id="post${conversation['id']}">
+    return `<div id="post${post['id']}">
     <div class="post">
         <div class="destination" style="color: ${color};">
-            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${conversation['id']})">
-            ${conversation['destination']}<br>
+            <img src="icons/X.svg" class="button-delete-post" onclick="deletePost(${post['id']})">
+            ${post['destination']}<br>
         </div>
-        <div class="date">${conversation['date']}<br></div>
+        <div class="date">${post['date']}<br></div>
         <div class="user-area">
             <img src="icons/profilpic.svg" class="profilpic" id="profilpic">
-            <div>${conversation['user']}</div>
+            <div>${post['user']}</div>
         </div>
-        <div class="title"><b>${conversation['title']}</b></div><br>
-        <div class="question">${conversation['question']}</div><br>
+        <div class="title"><b>${post['title']}</b></div><br>
+        <div class="question">${post['question']}</div><br>
         <img src="icons/linecool.png" class="line">
         <div class="comment-row">
             <img src="icons/questionanswer.svg" class="comment-icons">
             <div>
-                <input id="myTextarea${conversation['id']}" placeholder="Schreibe einen Kommentar" class="comment-input">
-                <button class="button-comment" onclick="addComment(${conversation['id']})">Post</button>
+                <input id="myTextarea${post['id']}" placeholder="Schreibe einen Kommentar" class="comment-input">
+                <button class="button-comment" onclick="addComment(${post['id']})">Post</button>
             </div>
-            <img onclick="like(${conversation['id']})" src="icons/like.svg" class="comment-icons" id="like-btn">
-            <div class="badge" id="badge${conversation['id']}">0</div>
+            <img onclick="like(${post['id']})" src="icons/like.svg" class="comment-icons" id="like-btn">
+            <div class="badge" id="badge${post['id']}">0</div>
         </div>
         <div class="commentrow" id="comments">
-            <div class="comment" id="mypostcomment${conversation['id']}">${commentsHTML}</div>
+            <div class="comment" id="mypostcomment${post['id']}">${commentsHTML}</div>
         </div>
         <div class="smileys">
-                <button class="S-button" onclick="pushSmileys(${conversation['id']},'🤔')">🤔</button>
-                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😎')">😎</button>
-                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😂')">😂</button>
-                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😍')">😍</button>
-                <button class="S-button" onclick="pushSmileys(${conversation['id']},'😭')">😭</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'🤔')">🤔</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😎')">😎</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😂')">😂</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😍')">😍</button>
+                <button class="S-button" onclick="pushSmileys(${post['id']},'😭')">😭</button>
         </div>
     </div>
 </div>
@@ -111,7 +111,7 @@ function generatePost() {
  */
 function generateCommentsHTML(){
         let commentsHTML = '';
-        let comments = conversation['comments'];
+        let comments = conversations['comments'];
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
@@ -126,7 +126,7 @@ function generateCommentsHTML(){
  */
  function addComment(id) {
     let myComment = document.getElementById(`myTextarea${id}`).value;
-    let myConversation = conversation.find(c => c.id ==id);
+    let myConversation = conversations.find(c => c.id ==id);
     myConversation.comments.push(myComment);
     saveComments();
     showMain(); 
@@ -138,8 +138,8 @@ function generateCommentsHTML(){
  * Function to save all Comments
  */
  function saveComments(){
-    let commentAsString = JSON.stringify(conversation);
-    backend.setItem('conversation', commentAsString);
+    let commentAsString = JSON.stringify(conversations);
+    backend.setItem('conversations', commentAsString);
 }
 
 
@@ -148,7 +148,7 @@ function generateCommentsHTML(){
  * @param i - current Textarea 
  * @param g - selected emoji for current textarea
  */
- function pushSmileys(i,g) {
+ function pushSmileys(post,g) {
     let myPostComment = document.getElementById(`myTextarea${post['id']}`);
     myPostComment.value += g;
 }
@@ -158,7 +158,7 @@ function generateCommentsHTML(){
  * counting likes on badge
  * @param i -current badge in selected post
  */
- function like(i) {
+ function like(post) {
     let badge = document.getElementById(`badge${post['id']}`);
     badge.innerText = +badge.innerText + 1;
 }
@@ -170,7 +170,7 @@ function generateCommentsHTML(){
  async function loadAllConversations() {
     await downloadFromServer();
 
-    conversation = jsonFromServer['conversation'] ? JSON.parse(jsonFromServer['conversation']) : [];
+    conversations = jsonFromServer['conversations'] ? JSON.parse(jsonFromServer['conversations']) : [];
 }
 
 
