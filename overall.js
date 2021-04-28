@@ -29,8 +29,8 @@ let conversations = [];
  * @param post - synonym for conversation[i]
  */
 function generatePost(conversation) {
-    let commentsHTML = generateCommentsHTML(conversations['comments']);
-    let color = getColorForDestination(color['destination']);
+    let commentsHTML = generateCommentsHTML(conversation['comments']);
+    let color = getColorForDestination(conversations['destination']);
 
     return `<div id="post${conversation['id']}">
     <div class="post">
@@ -109,10 +109,8 @@ function generatePost(conversation) {
  * @param {array>strings} comments -comments of a conversation object
  * @returns HTML Code of comments
  */
-function generateCommentsHTML(conversations){
+function generateCommentsHTML(comments){
         let commentsHTML = '';
-        let comments = conversations['comments'];
-
         for(let j=0; j<comments.length; j++){
             commentsHTML += `<div>${comments[j]}</div>`;
         }
@@ -149,8 +147,8 @@ function generateCommentsHTML(conversations){
  * @param i - current Textarea 
  * @param g - selected emoji for current textarea
  */
- function pushSmileys(post,g) {
-    let myPostComment = document.getElementById(`myTextarea${post['id']}`);
+ function pushSmileys(conversation,g) {
+    let myPostComment = document.getElementById(`myTextarea${conversation['id']}`);
     myPostComment.value += g;
 }
 
@@ -159,9 +157,9 @@ function generateCommentsHTML(conversations){
  * counting likes on badge
  * @param i -current badge in selected post
  */
- function like(post) {
-    let badge = document.getElementById(`badge${post['id']}`);
-    badge.innerText = +badge.innerText + 1;
+ function like(conversation) {
+    let badge = document.getElementById(`badge${conversation['id']}`);
+    badge.innerHTML = +badge.innerHTML + 1;
 }
 
 
