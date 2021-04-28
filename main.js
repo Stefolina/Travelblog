@@ -58,12 +58,15 @@ async function addPost() {
 /**
  * show update version of html
  */
- function showMain(post) {
+ function showMain() {
         let conversationArea = document.getElementById('myposts'); 
     if (conversationArea){
         conversationArea.innerHTML = '';  
-        for(let i = 0; i < conversations.length; i++) {
-            conversationArea.innerHTML += generatePost(post);
+
+        for (let i = 0; i < conversations.length; i++) {
+            const conversation = conversations[i];
+
+            conversationArea.innerHTML += generatePost(conversation); 
         }
     }
 }
