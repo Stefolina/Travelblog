@@ -30,7 +30,7 @@ let conversations = [];
  */
 function generatePost(conversation) {
     let commentsHTML = generateCommentsHTML(conversation['comments']);
-    let color = getColorForDestination(conversations['destination']);
+    let color = getColorForDestination(conversation['destination']);
 
     return `<div id="post${conversation['id']}">
     <div class="post">
