@@ -147,8 +147,8 @@ function generateCommentsHTML(comments){
  * @param i - current Textarea 
  * @param g - selected emoji for current textarea
  */
- function pushSmileys(conversation,g) {
-    let myPostComment = document.getElementById(`myTextarea${conversation['id']}`);
+ function pushSmileys(id,g) {
+    let myPostComment = document.getElementById(`myTextarea${id}`);
     myPostComment.value += g;
 }
 
@@ -157,8 +157,8 @@ function generateCommentsHTML(comments){
  * counting likes on badge
  * @param i -current badge in selected post
  */
- function like(conversation) {
-    let badge = document.getElementById(`badge${conversation['id']}`);
+ function like(id) {
+    let badge = document.getElementById(`badge${id}`);
     badge.innerHTML = +badge.innerHTML + 1;
 }
 

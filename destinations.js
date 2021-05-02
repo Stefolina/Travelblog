@@ -19,15 +19,13 @@
  * @param continent filtered continent by destination
  */
 
-function showDestinations(continent) { // Hier Variable verwenden
-    let filteredConversations =  getConversationsByDestination(continent); // Hier eine Variable einsetzen
+function showDestinations(destination) { // Hier Variable verwenden
+    let filteredConversations =  getConversationsByDestination(destination); // Hier eine Variable einsetzen
     document.getElementById('continents').innerHTML = '';
         for (let index = 0; index < filteredConversations.length; index++) {
             const element = filteredConversations[index];
-
-            let color = getColorForDestination(conversations['destination']);
         
-            document.getElementById('continents').innerHTML += generatePost(color, index, element);
+            document.getElementById('continents').innerHTML += generatePost(element);
 
             currentBackground(destination);
         }
