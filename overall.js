@@ -129,7 +129,7 @@ function generateCommentsHTML(comments){
     myConversation.comments.push(myComment);
     saveComments();
     showMain(); 
-    showDestinations(destination)
+    showDestinations(destination);
 }
 
 
