@@ -26,9 +26,9 @@ function showDestinations(destination) { // Hier Variable verwenden
             const element = filteredConversations[index];
         
             document.getElementById('continents').innerHTML += generatePost(element);
-
-            currentBackground(destination);
         }
+
+    currentBackground(destination);
 }
 
 

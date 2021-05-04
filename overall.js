@@ -123,7 +123,7 @@ function generateCommentsHTML(comments){
  * Function to add a Comment to post
  * @param id {number} e.g. 1618589389873
  */
- function addComment(id) {
+ function addComment(id, destination) {
     let myComment = document.getElementById(`myTextarea${id}`).value;
     let myConversation = conversations.find(c => c.id ==id);
     myConversation.comments.push(myComment);
